@@ -1,6 +1,6 @@
 # Web Application Firewall
 
-### Incident Overview  
+## Incident Overview  
 
 A web application firewall (WAF) filters, monitors, and blocks HTTP traffic to and from a web application.   
 A WAF is differentiated from a regular firewall in that a WAF is able to filter the content of specific web applications while regular firewalls serve as a safety gate between servers.    
