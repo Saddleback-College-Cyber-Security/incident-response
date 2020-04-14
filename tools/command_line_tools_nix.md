@@ -1,10 +1,10 @@
-## Command Line Tools for *NIX  
+# Command Line Tools for *NIX  
 
-### Incident Overview  
+## Incident Overview  
 
 Navigation and use of command line tools is a viable skill for any cyber security analyst. This section details various scenarios and commands for different *NIX systems.  
 
-### I Need Help, Where Can I Go?  
+## I Need Help, Where Can I Go?  
 
 The manual man is where most of the important info will be for any given command. The arg passed to man is normally the name of a program, utility or function.   
 
@@ -13,7 +13,7 @@ $ man <ARG>
 $ man man #This will show how to use the man command
 ```
 
-### General Commands    
+## General Commands    
 
 Superuser do `sudo` is a way to run a command (and only that command) as root while logged in as a non-root user.  
 
@@ -57,7 +57,7 @@ The concatenate `cat` command can be used to print files to the standard output.
 $ cat <FILE> #Prints FILE to screen
 ```                                        
 
-### Connecting
+## Connecting
 
 The secure shell client `ssh` is a program that allows the connection to a remote machine that is running an ssh server.  
 
@@ -66,7 +66,7 @@ $ ssh <USER>@<ADDRESS> #Connect to ADDRESS as USER
 $ ssh <USER>@<ADDRESS> -p <PORT> #Connect to ADDRESS as USER on remote PORT
 $ ssh <ADDRESS> #Connect to ADDRESS as your logged in username
 ```             
-### System Identification
+## System Identification
 
 Identifying a fresh system you have been handed with no prior context is important for knowing which command syntax to use.
 
@@ -91,7 +91,7 @@ $ domainname #Show or set the domain name
 $ dnsdomainname #Show or set the dns domain name                           
 ```
 
-### User Administration
+## User Administration
 
 ```shell
 $ cat /etc/passwd #Show pwd file for all users on the system
@@ -141,7 +141,7 @@ $ userdel <USER> #Delete USER from system
 $ userdel -r <USER> #Delete USER from system and delete $HOME              
 ```
 
-### Service Administration
+## Service Administration
 
 Listing all services on the machine.
 
@@ -166,7 +166,7 @@ $ firewall-cmd --zone=public --permanent  --[add/remove]-port=[port]/tcp        
 $ firewall-cmd --reload    #CentOS
 ```
 
-### Kicking someone off of a system
+## Kicking someone off of a system
 
 See who's logged into your machine -- use `who` or `w`
 
