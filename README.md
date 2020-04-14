@@ -38,11 +38,21 @@ For those looking to skip straight into using git, it can be downloaded and inst
 
 Graphical options for git are available, however most develepors opt to use the command line version instead. The tutorial mentioned previously uses command line tools.
 
-### Formatting 
+### Commit Formatting 
 
 For those already getting started, please try to adhear to the formatting standards found in the various files already populating this repository.
 
-When adding new files to the repository, please also attempt to place them in reasonable locations based on their relevency to the designated directory names (e.g. put `tools` in the `tools` folder before you commit)
+When creating a commit, please attempt to adhear to the following format: 
+
+```
+[ADD] Text explaing what was added.
+[EDIT] Text explaing what was edited.
+[REMOVE] Text explaing what was removed.
+```
+
+### Adding New Files
+
+When adding new files to the repository, please attempt to place them in reasonable locations based on their relevency to the designated directory names (e.g. put `tools` like nmap in the `tools` folder before you commit)
 
 Also before pushing to github, please remember to go through the following steps in your process for commiting:
 
@@ -50,12 +60,10 @@ Also before pushing to github, please remember to go through the following steps
 2. Add your changes to the working tree and commit them.
 3. Push your changes, remembering to run the first-time push command if this is a new branch (if you are lazy like me you can just let the command line tell you what it is)
 4. Go to this repository on Github and create a pull request. Assuming you completed the following 3 steps correctly, Github *should* automatically tell you to make one. 
-5. Await your pull request's approval, as Karla and I (Felix) will be approving pull requests in order to maintain the repository
+5. Await your pull request's approval, as Karla and Felix will be approving pull requests in order to maintain the repository
 
 >If this all seems alien to you, don't panic! The tutorial mentioned earlier can help you learn these terms and steps!
 
-### Epilogue
+### Final Remarks
 
 With all that said, happy researching and feel free to reach out to Karla or Felix with any questions or concerns!
-
--- Felix Murray
