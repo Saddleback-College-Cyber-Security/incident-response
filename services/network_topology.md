@@ -1,6 +1,6 @@
-## Network Topology  
+# Network Topology  
 
-### Incident Overview  
+## Incident Overview  
 
 Network topology is the arrangement of the elements of a communication network. Network topology can be used to define or describe the arrangement of various types of telecommunication networks.   
 

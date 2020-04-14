@@ -1,6 +1,6 @@
-## Central Authentication Service
+# Central Authentication Service
 
-### Incident Overview  
+## Incident Overview  
 
 The Central Authentication Service (CAS) is a single sign-on protocol for the web.  
 Its purpose is to permit a user to access multiple applications while providing their credentials (such as userid and password) only once.   
