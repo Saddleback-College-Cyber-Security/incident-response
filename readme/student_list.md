@@ -18,6 +18,7 @@
 | Session Hijacking                 |   Dan                 |                     
 | Phishing                          |   Dan                 |                   
 | Remote Capture                    |   Dan                 |
-| Command Line Tools                |                       |
+| *NIX Command Line Tools           |   Jacob               |
+| Windows Command Line Tools        |                       |
 
 
