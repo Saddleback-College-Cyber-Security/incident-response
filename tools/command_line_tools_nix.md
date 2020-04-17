@@ -15,7 +15,7 @@ $ man man #This will show how to use the man command
 
 ## General Commands
 
-Superuser do `sudo` is a way to run a command (and only that command) as root while logged in as a non-root user.
+Superuser do `sudo` is a way to run a command (and only that command) as root while logged in as a non-root user that has sudo privileges.
 
 >Note: asks for root password. (also "caches" user's credentials for future commands)
 
@@ -139,8 +139,57 @@ $ usermod -a -G <GROUP> <USER> #Add USER to GROUP
 
 ```shell
 $ userdel <USER> #Delete USER from system
-$ userdel -r <USER> #Delete USER from system and delete $HOME
+$ userdel -r <USER> #Delete USER from system and delete the user's $HOME
 ```
+
+## Service Administration
+
+### Systemd
+
+Most modern linux systems use an "**init**" program called `systemd` to manage services and the system. The `systemctl` is the most used command in the suite.
+
+```shell
+$ systemctl list-units -t service --all #List all services installed on a machine
+$ systemctl list-units -t service #List all active services
+$ systemctl start <SERVICE>
+$ systemctl stop <SERVICE>
+$ systemctl restart <SERVICE> #Stop SERVICE and then start it
+$ systemctl reload <SERVICE> #Reloads the configuration files without stopping SERVICE
+$ systemctl enable <SERVICE> #Start SERVICE on system boot
+$ systemctl disable <SERVICE> #Start SERVICE on system boot
+$ systemctl status <SERVICE> #Show status information for SERVICE, followed by recent logs
+$ systemctl -H <HOST> <COMMAND> <SERVICE> #Runs a systemctl COMMAND on HOST over ssh
+```
+
+`systemd` also implements the `halt`, `poweroff`, `reboot` commands:
+
+```shell
+$ halt #Tells hardware to stop CPU functions but leaves it powered on
+$ poweroff #Send ACPI shutdown signal
+$ reboot #Reboots system
+```
+
+### Service Wrapper
+
+For machines that don't have `systemd`, try `service`. It is a wrapper script that allows basic control of services like start, stop, and status among others. `service` actually will look and use whatever "**init**" system is installed on the system. See [here](https://askubuntu.com/questions/903354/difference-between-systemctl-and-service-commands) for more info.
+
+```shell
+$ service --list-all #List all services installed on a machine
+$ service <SERVICE> stop
+$ service <SERVICE> start
+$ service <SERVICE> restart #Stop SERVICE and then start it
+$ service <SERVICE> status #Show status information for SERVICE, followed by recent logs
+$ service <SERVICE> reload #Reloads the configuration files without stopping SERVICE
+```
+
+
+
+
+
+
+
+
+
 
 
 
@@ -149,25 +198,6 @@ $ userdel -r <USER> #Delete USER from system and delete $HOME
 
 # FIXME BELOW THIS LINE
 
-
-
-
-## Service Administration
-
-Listing all services on the machine.
-
-```shell
-$ service --list-all #For older Operating Systems
-$ systemctl list-unit-files
-$ systemctl list-units --type service
-```
-
-Stopping/starting/restarting a service
-
-```shell
-$ service [service] [stop/start/restart]
-$ systemctl [stop/start/restart] [service]
-```
 
 Opening/closing a port
 
