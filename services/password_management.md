@@ -8,7 +8,11 @@ This incident covers several different aspects of passwords, updated frequently 
 
 Research and provide information on the following concepts:  
 
-- Current standard for minimum password length and complexity (as of April 2020)    
+- Current standard for minimum password length and complexity (as of April 2020)   
+    - NIST recommends no password complexity requirements
+    - NIST also recommends no password lifetime requirements - only forcing a password change when a password is suspected to be compromised.
+    - NIST does require a list of common passwords to disallow.
+    - NIST also recommends increasing the length of passwords
 - Commands for performing the following:     
     - Changing password for accounts
         - Note differences in OS (e.g. Windows, macOS, Linux)
@@ -17,4 +21,5 @@ Research and provide information on the following concepts:
         - Note differences in OS (e.g. Windows, macOS, Linux)
         - Note differences in privilage requirement (e.g. whether ```sudo``` is needed on Linux)
 
+[https://pages.nist.gov/800-63-FAQ/] for password requirements
 >**[Note]** Remember to use markdown syntax to organize information in useful ways.
