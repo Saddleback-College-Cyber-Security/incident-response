@@ -13,13 +13,32 @@ Research and provide information on the following concepts:
     - NIST also recommends no password lifetime requirements - only forcing a password change when a password is suspected to be compromised.
     - NIST does require a list of common passwords to disallow.
     - NIST also recommends increasing the length of passwords
-- Commands for performing the following:     
-    - Changing password for accounts
-        - Note differences in OS (e.g. Windows, macOS, Linux)
-        - Note differences in privilage requirement (e.g. whether ```sudo``` is needed on Linux)
-    - Changing password lifetime
-        - Note differences in OS (e.g. Windows, macOS, Linux)
-        - Note differences in privilage requirement (e.g. whether ```sudo``` is needed on Linux)
+- How to perform:     
+    - Change a password:
+        - Linux
+          - Note differences in OS (e.g. Windows, macOS, Linux)
+          - Note differences in privilege requirement (e.g. whether ```sudo``` is needed on Linux)
+        - Windows
+          - local accounts
+            - version 1803 and onward
+              - click the reset button.
+              - answer the security questions
+            - prior to version 1803
+              - reset the device
+              - this WILL wipe your data however. make sure to backup important data!
+          - Microsoft accounts
 
+    - Change a password for Linux
+
+    - Change password lifetime:
+        - Linux:
+          - Note differences in OS (e.g. Windows, macOS, Linux)
+          - Note differences in privilege requirement (e.g. whether ```sudo``` is needed on Linux)
+        - Windows:
+          - local accounts
+            -
+          - Microsoft accounts
+            -
 [https://pages.nist.gov/800-63-FAQ/] for password requirements
+[https://support.microsoft.com/en-us/help/4028457/windows-10-reset-your-local-account-password] for local account password reset on Windows 10
 >**[Note]** Remember to use markdown syntax to organize information in useful ways.
