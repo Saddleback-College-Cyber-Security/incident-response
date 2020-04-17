@@ -1,5 +1,17 @@
 # Command Line Tools for *NIX
 
+## Table of Contents
+- [Incident Overview](#Incident-Overview)
+- [I Need Help, Where Can I Go?](#I-Need-Help,-Where-Can-I-Go?)
+- [General Commands](#General-Commands)
+- [Connecting](#Connecting)
+- [System Identification](#System-Identification)
+- [User Administration](#User-Administration)
+- [Service Administration](#Service-Administration)
+  - [Systemd](#Systemd)
+  - [Service Wrapper](#Service-Wrapper)
+- [In Progress](#FIXME-BELOW-THIS-LINE)
+
 ## Incident Overview
 
 Navigation and use of command line tools is a viable skill for any cyber security analyst. This section details various scenarios and commands for different *NIX systems.
@@ -198,6 +210,7 @@ $ service <SERVICE> reload #Reloads the configuration files without stopping SER
 
 # FIXME BELOW THIS LINE
 
+###### [Table of Contents](#Table-of-Contents)
 
 Opening/closing a port
 
