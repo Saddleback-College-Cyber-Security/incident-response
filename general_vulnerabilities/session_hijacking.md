@@ -1,5 +1,7 @@
 # Session Hijacking & Countermeasures
 
+[home](../README.md)
+
 
 ## Abstract 
 Session Hijacking by definition is when an attacker gains unauthenticated access over a valid TCP connection between two computers. Based on most authentication happening at the beginning of a TCP session, this permits an attacker to have access to a machine. An attack can uses a vulnerability scanning tools to capture all networking traffic through a TCP connection to perform Identity theft, information theft, fraud, even inject client-side scripts using Java onto pages on the web that cause a web browser to execute arbitrary code when it loads a page that is compromised page. If a server fails to set the HTTPonly settings in session cookies, scripts that are injected now have entry to the session ID, this allows attackers with the necessary information for session hijacking. In this paper I have mentioned several concept pertaining to session hijacking I discuss the different types of session hijacking, proper procedures for counter measures as well as man in the middle attacks and vulnerabilities associated with session Hijacking. 
