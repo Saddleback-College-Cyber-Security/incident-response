@@ -1,5 +1,8 @@
 # FTP Install on Kali Linux
 
+[home](../README.md)
+- [Example](#Example)
+
 Log into Kali system
 
 Open terminal on desktop screen

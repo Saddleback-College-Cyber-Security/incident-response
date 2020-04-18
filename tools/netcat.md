@@ -1,5 +1,8 @@
 # Netcat
 
+[home](../README.md)
+- [Example](#Example)
+
 ## Incident Overview  
 
 Netcat is a computer networking utility for reading from and writing to network connections using TCP or UDP.   
