@@ -214,6 +214,8 @@ $ service <SERVICE> reload #Reloads the configuration files without stopping SER
 
 ###### [Table of Contents](#Table-of-Contents)
 
+installing apps
+
 Opening/closing a port
 
 ```shell

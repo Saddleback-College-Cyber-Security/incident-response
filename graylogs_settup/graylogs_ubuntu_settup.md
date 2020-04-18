@@ -2,6 +2,7 @@
 # **Central Logging**
 
 [home](../README.md)
+- [TITLE](#TITLE) <- NEED TO CONVERT TITLES TO HEADERS
 
 **Source:** http://docs.graylog.org/en/2.4/pages/installation/os/ubuntu.html
 

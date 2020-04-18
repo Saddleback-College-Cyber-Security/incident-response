@@ -26,12 +26,10 @@ Inside the directory `readme` you will find the following goodies to get you sta
 
 ### Documents
 
-
-
 - Contributing
 	- [Markdown Syntax](./readme/markdown_syntax.md)
 	- [Open Sections](./readme/Open_Sections.pdf)
-	- [Student List.md](./readme/student_list.md)
+	- [Student List](./readme/student_list.md)
 	- [Topics](./readme/topics.md)
 - FTP Install
 	- [Kali Linux](./ftp_install/kali_linux.md)
@@ -53,7 +51,7 @@ Inside the directory `readme` you will find the following goodies to get you sta
 	- [Password Management](./services/password_management.md)
 	- [Web Application Firewall](./services/web_application_firewall.md)
 - Tools
-	- [Command Line Tools *nix](./tools/command_line_tools_nix.md)
+	- [Command Line *nix](./tools/command_line_nix.md)
 	- [Nessus](./tools/nessus.md)
 	- [NetCat](./tools/netcat.md)
 	- [Nmap](./tools/nmap.md)
