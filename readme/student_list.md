@@ -11,7 +11,7 @@
 | Central Logging                   |   Kole, Tasha         |                     
 | FTP                               |   John                |                     
 | Password Management               |   Cameron             |                     
-| Central Authentication Service    |                       |                     
+| Central Authentication Service    |   Felix Murray        |                     
 | Jenkins                           |   Kyle                |                     
 | NFS                               |   Ashkon              |                     
 | Web Application Firewall          |   Mona                |                     
