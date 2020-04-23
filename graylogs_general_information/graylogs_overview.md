@@ -1,7 +1,7 @@
-##Overview of Graylogs
+## Overview of Graylogs
 
 
-###Use cases:
+### Use cases:
 * Compliance with security / outside regulations
 * Understand and respond to security incidents
 * Troubleshooting
@@ -9,7 +9,7 @@
 * Conduct forensics in the event of an investigation
 
 
-###What should be logged to improve security:
+### What should be logged to improve security:
 * Used IDs
 * Event Timestamps
 * Terminal ID
@@ -21,7 +21,7 @@
 * Activation of protective software
 
 
-###What should be logged to improve performance:
+### What should be logged to improve performance:
 * Detect bottlenecks
 * Optimize processes
 * Perform load balancing
