@@ -13,5 +13,5 @@ Research and provide information on the following concepts:
 - Best practices for creating network topologyh diagrams and key things to look out for (e.g. a tutorial on how to make one)
 
 ![Network Diagram Example](https://i.gyazo.com/7e25605997e1c333a5feca6b3aefe165.png)
-
+Bryan: Network
 >**[Note]** Remember to use markdown syntax to organize information in useful ways.
