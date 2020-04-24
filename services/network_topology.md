@@ -14,4 +14,9 @@ Research and provide information on the following concepts:
 
 ![Network Diagram Example](https://i.gyazo.com/7e25605997e1c333a5feca6b3aefe165.png)
 Bryan: Network
+
+What network topology is:
+How does it work:
+Types of network topologies:
+Network Topology Tools: 
 >**[Note]** Remember to use markdown syntax to organize information in useful ways.
