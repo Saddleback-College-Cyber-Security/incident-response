@@ -21,6 +21,6 @@
 | Phishing                          |   Dan                 |                   
 | Remote Capture                    |   Dan                 |
 | *NIX Command Line Tools           |   Jacob               |
-| Windows Command Line Tools        |                       |
+| Windows Command Line Tools        |   Breighton           |
 
 
