@@ -6,7 +6,18 @@
 - [Incident Overview](#Incident-Overview)
 - [I Need Help, Where Can I Go?](#I-Need-Help,-Where-Can-I-Go?)
 - [General Commands](#General-Commands)
-- [Connecting](#Connecting)
+- [Networking](#Networking)
+	- [Tools](#Tools)
+	- [Show Interfaces](#Show-Interfaces)
+	- [Turn Interfaces on/off](#Turn-Interfaces-on/off)
+	- [Set Address for Interface](#Set-Address-for-Interface)
+	- [Promiscuous Mode](#Promiscuous-Mode)
+	- [Routes](#Routes)
+	- [DNS Stuff](#DNS-Stuff)
+	- [ARP](#ARP)
+	- [Sockets and Ports](#Sockets-and-Ports)
+	- [Other Useful Commands](#Other-Useful-Commands)
+- [Connecting to Remote Hosts](#Connecting-to-Remote-Hosts)
 - [System Identification](#System-Identification)
 - [User Administration](#User-Administration)
 - [Service Administration](#Service-Administration)
@@ -72,7 +83,173 @@ The concatenate `cat` command can be used to print files to the standard output.
 $ cat <FILE> #Prints FILE to screen
 ```
 
-## Connecting
+## Networking
+
+Networking on *nix based machines is complicated because of how many tools there are and what comes pre-installed on each distro. These are some of the basic tools and how to use them.
+
+>**Commands that manipulate system settings typically require root privileges. See [`sudo`](#General-Commands)**
+
+### Tools
+
+The most popular tools are:
+
+```shell
+$ dig #DNS lookup utility
+$ host #DNS lookup utility
+$ nslookup #DNS lookup utility
+
+$ ethtool #Query or control network driver and hardware settings
+$ ifconfig #General purpose network interface manipulator (deprecated and replaced by ip)
+$ ip #General purpose network interface manipulator (most options can be shortened e.g. address to addr)
+$ iw #General purpose wireless network interface manipulator
+$ iwconfig #General purpose wireless network interface manipulator (deprecated and replaced by iw)
+$ nmcli & NetworkManager #Network management daemon
+
+$ nameif #Name interfaces based on MAC addresses
+
+$ arp #Manipulate or display the system ARP cache
+$ netstat #Show network info
+
+$ traceroute #Print the route packets take to destination
+$ ping #Send ICMP ECHO_REQUEST to network hosts
+$ route #Show/manipulate the IP routing table
+
+$ ss #Show socket information
+```
+
+### Show Interfaces
+
+```shell
+$ ifconfig #Show enabled interfaces' info
+$ ifconfig -a #Show all interfaces' info
+$ ifconfig <INTERFACE> #Show INTERFACE's info
+
+$ ip address #Show all interfaces' info
+$ ip address show <INTERFACE> #Show INTERFACE's info
+
+$ ethtool <INTERFACE> #Show INTERFACE's info
+
+$ nmcli dev show #Show all interfaces' info
+$ nmcli dev show <INTERFACE> #Show INTERFACE's info
+
+$ netstat -i #Show all interfaces' info
+```
+
+### Turn Interfaces on/off
+
+```shell
+$ ifconfig <INTERFACE> up #Turn INTERFACE on
+$ ifconfig <INTERFACE> down #Turn INTERFACE off
+$ ifup <INTERFACE> #Turn INTERFACE on
+$ ifdown <INTERFACE> #Turn INTERFACE off
+$ ip link set <INTERFACE> down #Turn INTERFACE off
+$ ip link set <INTERFACE> up #Turn INTERFACE on
+$ nmcli con up <INTERFACENAME> #Turn INTERFACENAME on
+$ nmcli con down <INTERFACENAME> #Turn INTERFACENAME off
+```
+
+### Set Address for Interface
+
+#### Temporary (resets after reboot):
+```shell
+$ ifconfig <INTERFACE> <IPADDRESS> netmask <MASK> #Set INTERFACE to IPADDRESS with netmask MASK
+$ route add default gw <GATEWAY> <INTERFACE> #Set the default GATEWAY on INTERFACE
+$ service network restart
+```
+OR
+```shell
+$ ip address add <IPADDRESS> dev <INTERFACE> #Set INTERFACE to IPADDRESS in CIDR format
+$ ip route add <GATEWAY> dev <INTERFACE> #Set the GATEWAY on INTERFACE in CIDR format
+$ systemctl restart network
+```
+OR
+```shell
+$ nmcli device modify <INTERFACENAME> ipv4.address <IPADDRESS> gw4 <GATEWAY> #Set INTERFACENAME to IPADDRESS in CIDR format with GATEWAY
+```
+
+#### Permanent:
+
+RHEL / CentOS / Fedora:
+
+```shell
+Edit:
+$ /etc/sysconfig/network
+$ /etc/sysconfig/network-scripts/ifcfg-<INTERFACE>
+$ /etc/resolv.conf
+Then Run:
+$ systemctl restart network
+```
+
+Debian/ Ubuntu:
+
+```shell
+Edit:
+$ /etc/network/interfaces
+$ /etc/resolv.conf
+Then Run:
+$ systemctl restart network
+```
+
+### Promiscuous Mode
+
+```shell
+$ ifconfig <INTERFACE> promisc #Turn promiscuous mode on
+$ ip link set <INTERFACE> promisc on #Turn promiscuous mode on
+$ ifconfig <INTERFACE> -promisc #Turn promiscuous mode off
+$ ip link set <INTERFACE> promisc off #Turn promiscuous mode off
+```
+
+### Routes
+
+```shell
+$ route -n #Show default routes (in numeric values)
+$ route add default gw <GATEWAY> <INTERFACE> #Set the default GATEWAY on INTERFACE in CIDR format
+$ ip route show #Show default routes
+$ ip route add <GATEWAY> dev <INTERFACE> #Set the GATEWAY on INTERFACE in CIDR format
+$ ip route del <GATEWAY> dev <INTERFACE> #Delete the GATEWAY on INTERFACE in CIDR format
+$ netstat -r #Show default routes
+```
+
+### DNS Stuff
+
+```shell
+$ dig <HOSTNAME> #Request HOSTNAME resolution from nameserver
+$ host <HOSTNAME> #Request HOSTNAME resolution from nameserver
+$ nslookup <HOSTNAME> #Request HOSTNAME resolution from nameserver
+$ nslookup <IPADDRESS> #Request HOSTNAME from nameserver based on IPADDRESS
+```
+
+### ARP
+```shell
+$ arp -n #Show all cached values in ARP table (in numeric values)
+$ arp -s <IPADDRESS> -i <INTERFACE> <MAC> #Add entry to ARP table
+$ arp -d <IPADDRESS> #Delete entry from table
+
+$ ip neighbor show
+$ ip neineighborgh add <IPADDRESS> lladdr <MAC> dev <INTERFACE> nud <STATE> #Add entry to ARP table. State: [permanent|noarp|stale|reachable]
+$ ip neighbor del <IPADDRESS> dev <INTERFACE> #Delete entry from table
+$ ip -s -s neighbor flush <IPADDRESS> #Flush entry from table
+```
+
+### Sockets and Ports
+
+```shell
+$ netstat -a #All ports (options can be combined e.g. netstat -at)
+$ netstat -t #TCP ports
+$ netstat -u #UDP ports
+$ netstat -l #Listening ports
+$ netstat -s #Statistics
+$ ss (same options as netstat)
+```
+
+### Other Useful Commands
+
+```shell
+$ traceroute <HOSTNAME/IPADDRESS> #Show route to HOSTNAME or IPADDRESS (-n for numerical)
+$ ping <HOSTNAME/IPADDRESS> 
+```
+
+## Connecting to Remote Hosts
 
 The secure shell client `ssh` is a program that allows the connection to a remote machine that is running an ssh server.
 
@@ -81,6 +258,7 @@ $ ssh <USER>@<ADDRESS> #Connect to ADDRESS as USER
 $ ssh <USER>@<ADDRESS> -p <PORT> #Connect to ADDRESS as USER on remote PORT
 $ ssh <ADDRESS> #Connect to ADDRESS as your logged in username
 ```
+
 ## System Identification
 
 Identifying a fresh system you have been handed with no prior context is important for knowing which command syntax to use.
@@ -215,6 +393,16 @@ $ service <SERVICE> reload #Reloads the configuration files without stopping SER
 ###### [Table of Contents](#Table-of-Contents)
 
 installing apps
+
+connecting additions:
+`scp`
+`telnet`
+`ftp`
+
+scheduling tasks
+
+## Piping Data (Command Redirection)
+pipe operator
 
 Opening/closing a port
 
