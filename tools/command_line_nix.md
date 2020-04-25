@@ -6,6 +6,10 @@
 - [Incident Overview](#Incident-Overview)
 - [I Need Help, Where Can I Go?](#I-Need-Help,-Where-Can-I-Go?)
 - [General Commands](#General-Commands)
+- [Installing And Managing Packages](#Installing-And-Managing-Packages)
+	- [.deb Based (Debian Family)](#.deb-Based-(Debian-Family))
+	- [.rpm Based (CentOS/RHEL, Fedora, SUSE)](#.rpm-Based-(CentOS/RHEL,-Fedora,-SUSE))
+	- [Pacman Based (Arch Family)](#Pacman-Based-(Arch-Family))
 - [Networking](#Networking)
 	- [Tools](#Tools)
 	- [Show Interfaces](#Show-Interfaces)
@@ -18,6 +22,8 @@
 	- [Sockets and Ports](#Sockets-and-Ports)
 	- [Other Useful Commands](#Other-Useful-Commands)
 - [Connecting to Remote Hosts](#Connecting-to-Remote-Hosts)
+	- [telnet](#telnet)
+	- [ssh](#ssh)
 - [System Identification](#System-Identification)
 - [User Administration](#User-Administration)
 - [Service Administration](#Service-Administration)
@@ -83,11 +89,70 @@ The concatenate `cat` command can be used to print files to the standard output.
 $ cat <FILE> #Prints FILE to screen
 ```
 
+## Installing And Managing Packages
+
+Package management is different for every [disrto and its derivatives](https://en.wikipedia.org/wiki/List_of_Linux_distributions). Usually distros are classified by the type of packages they use (`.deb`, `.rpm`, `.pkg.tar.zst`, etc.)
+
+>**Commands that manipulate system settings or files typically require root privileges. See [`sudo`](#General-Commands)**
+
+### .deb Based (Debian Family)
+
+Debian and its derivatives use the [dpkg](https://wiki.debian.org/Teams/Dpkg) package manager as well as its frontends such as [apt](https://wiki.debian.org/Apt), `apt-get`, and [aptitude](https://wiki.debian.org/Aptitude).
+
+```shell
+$ dpkg -i <PACKAGEFILE> #Install PACKAGEFILE (PACKAGEFILE must be in current dir)
+$ dpkg -r <PACKAGENAME> #Remove PACKAGENAME
+
+$ apt install <PACKAGENAME> #Install PACKAGENAME
+$ apt remove <PACKAGENAME> #Remove PACKAGENAME
+$ apt update #Update local repository
+$ apt upgrade #Upgrade packages
+
+$ apt-get install <PACKAGENAME> #Install PACKAGENAME
+$ apt-get remove <PACKAGENAME> #Remove PACKAGENAME
+$ apt-get purge <PACKAGENAME> #Remove PACKAGENAME and delete config files
+$ apt-get update #Update local repository
+$ apt-get upgrade #Upgrade packages
+```
+
+### .rpm Based (CentOS/RHEL, Fedora, SUSE)
+
+RPM based distributions use the [rpm](https://rpm.org/documentation.html) package manager. Most rpm based distros use frontends such as [yum](http://yum.baseurl.org/), [DNF](https://rpm-software-management.github.io/), and `up2date`.
+
+```shell
+$ rpm -i <PACKAGEFILE> #Install PACKAGEFILE (PACKAGEFILE must be in current dir)
+$ rpm -e <PACKAGENAME> #Remove PACKAGENAME
+$ rmp -U <PACKAGENAME> #Update PACKAGENAME
+
+$ yum install <PACKAGENAME> #Install PACKAGENAME
+$ yum remove <PACKAGENAME> #Remove PACKAGENAME
+$ yum check-update #Update local repository
+$ yum update #Upgrade packages
+
+$ dnf install <PACKAGENAME> #Install PACKAGENAME
+$ dnf remove <PACKAGENAME> #Remove PACKAGENAME
+$ dnf check-update #Update local repository
+$ dnf update #Upgrade packages
+
+$ up2date -i <PACKAGENAME> #Install PACKAGENAME
+$ up2date -u #Upgrade packages
+```
+
+### Pacman Based (Arch Family)
+
+Distros in the Arch Linux family use the [pacman](https://wiki.archlinux.org/index.php/Pacman) package manager.
+
+```shell
+$ pacman -S <PACKAGENAME> #Install PACKAGENAME
+$ pacman -R <PACKAGENAME> #Remove PACKAGENAME
+$ pacman -Syu #Upgrade packages
+```
+
 ## Networking
 
 Networking on *nix based machines is complicated because of how many tools there are and what comes pre-installed on each distro. These are some of the basic tools and how to use them.
 
->**Commands that manipulate system settings typically require root privileges. See [`sudo`](#General-Commands)**
+>**Commands that manipulate system settings or files typically require root privileges. See [`sudo`](#General-Commands)**
 
 ### Tools
 
@@ -251,12 +316,32 @@ $ ping <HOSTNAME/IPADDRESS>
 
 ## Connecting to Remote Hosts
 
+### telnet
+
+The TELNET protocol provides plain text interaction between machines using a virtual terminal connection. Because `telnet` is plain text, it is recommended to use `ssh`, which is encrypted.
+
+```shell
+$ telnet <ADDRESS> #Connect to ADDRESS (asks for username)
+$ telnet <ADDRESS> <PORT> #Connect to ADDRESS on PORT
+$ telnet -l <USER> <ADDRESS> #Connect to ADDRESS as USER
+```
+
+### ssh
+
 The secure shell client `ssh` is a program that allows the connection to a remote machine that is running an ssh server.
 
 ```shell
 $ ssh <USER>@<ADDRESS> #Connect to ADDRESS as USER
 $ ssh <USER>@<ADDRESS> -p <PORT> #Connect to ADDRESS as USER on remote PORT
 $ ssh <ADDRESS> #Connect to ADDRESS as your logged in username
+```
+
+`scp` is similar to [(s)ftp](../services/file_transfer_protocol.md) where they both tranfer files over the ssh protocol, however, they do have different use cases.
+
+>note FILE requires the full path to the file. If HOST is omitted, FILE will be from the machine running the command
+
+```shell
+$ scp [[<USER>@]<HOST1>:]<FILE1> [[<USER>@]<HOST2>:]<FILE2> #Transfer FILE1 on HOST1 to HOST2 as FILE2
 ```
 
 ## System Identification
@@ -393,11 +478,8 @@ $ service <SERVICE> reload #Reloads the configuration files without stopping SER
 ###### [Table of Contents](#Table-of-Contents)
 
 installing apps
+- add gentoo and slackware
 
-connecting additions:
-`scp`
-`telnet`
-`ftp`
 
 scheduling tasks
 
