@@ -38,10 +38,10 @@ please note that instructions for windows is listed for windows 10. If you are w
               - select password security
               - follow the instructions listed
     - Change a password for Linux
-
+      - sudo passwd (username) use this command to change any account password
     - Change password lifetime:
         - Linux:
-          - 
+          - chage -m (number) (username)
         - Windows:
           - make sure you are a global admin! you cannot do any password lifetime changes unless you are a global admin
           - go to the settings app
@@ -52,4 +52,6 @@ please note that instructions for windows is listed for windows 10. If you are w
 [https://support.microsoft.com/en-us/help/4028457/windows-10-reset-your-local-account-password] for local account password reset on Windows 10
 [https://docs.microsoft.com/en-us/microsoft-365/admin/manage/set-password-expiration-policy?view=o365-worldwide] for password lifetime
 [https://support.microsoft.com/en-us/help/4026971/microsoft-account-how-to-reset-your-password] for microsoft account password reset on windows 10
+[https://www.cyberciti.biz/faq/linux-set-change-password-how-to/] for linux changing of passwords
+[https://www.cloudibee.com/change-password-expiry-in-linux/]
 >**[Note]** Remember to use markdown syntax to organize information in useful ways.
