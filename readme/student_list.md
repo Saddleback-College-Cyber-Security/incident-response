@@ -1,5 +1,7 @@
 # Student List (CEH)
 
+[home](../README.md)
+
 | Topic                             | Student               | 
 | :---                              |    :----:             |
 | Netcat                            |   Jacob               |                     
@@ -9,7 +11,7 @@
 | Central Logging                   |   Kole, Tasha         |                     
 | FTP                               |   John                |                     
 | Password Management               |   Cameron             |                     
-| Central Authentication Service    |                       |                     
+| Central Authentication Service    |   Felix Murray        |                     
 | Jenkins                           |   Kyle                |                     
 | NFS                               |   Ashkon              |                     
 | Web Application Firewall          |   Mona                |                     
@@ -19,6 +21,6 @@
 | Phishing                          |   Dan                 |                   
 | Remote Capture                    |   Dan                 |
 | *NIX Command Line Tools           |   Jacob               |
-| Windows Command Line Tools        |                       |
+| Windows Command Line Tools        |   Breighton           |
 
 

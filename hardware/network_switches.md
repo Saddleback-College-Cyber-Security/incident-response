@@ -1,5 +1,8 @@
 # Network Switches
 
+[home](../README.md)
+- [Example](#Example)
+
 ### Here you will find some general, and useful information about network switches.
 
 For demonstration purposes we will be using a cisco network switches format since they are the most common and widely used.

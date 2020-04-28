@@ -1,5 +1,8 @@
 # Central Logging
 
+[home](../README.md)
+- [Example](#Example)
+
 ## Incident Overview  
 
 Centralized Log Management (CLM) is a type of logging solution system that consolidates all of your log data and pushes it to one central, accessible, and easy-to-use interface.   
