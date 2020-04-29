@@ -3,8 +3,6 @@
 [home](../README.md)
 - [Example](#Example)
 
-
-
 ## Incident Overview
 
 Nessus, a vulnerability detection software, is one of the tools which our teams will be using to find vulnerabilities in our systems.  
@@ -17,6 +15,11 @@ Research and provide information on the following concepts:
     - Quick Scan
     - Full Scan
     - etc. (look into other scans that may be useful to know)
+
+## Installation
+
+Nessus has downloader on their website for most of the popular operating systems: https://www.tenable.com/downloads/nessus
+- For operating systems with
 
 >**[Note]** Remember to use markdown syntax to organize information in useful ways.
 >**[Note]** A free version of Nessus can be obtained using a student email address from the Tenable website.
