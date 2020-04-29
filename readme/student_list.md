@@ -12,9 +12,9 @@
 | FTP                               |   John                |                     
 | Password Management               |   Cameron             |                     
 | Central Authentication Service    |   Felix Murray        |                     
-| Jenkins                           |   Kyle                |                     
+| Jenkins                           |                       |                     
 | NFS                               |   Ashkon              |                     
-| Web Application Firewall          |   Mona                |                     
+| Web Application Firewall          |                       |                     
 | Initial System Setup              |   Cameron             |                     
 | Network Devices                   |   Billy, Dan, Jacob   |                     
 | Session Hijacking                 |   Dan                 |                     
