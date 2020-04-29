@@ -64,23 +64,23 @@ The term “CAS client” has two distinct meanings in its common use. A CAS cli
 
 **Platforms:**
 
-    Apache httpd Server (mod_auth_cas module)
-    Java (Java CAS Client)
-    .NET (.NET CAS Client)
-    PHP (phpCAS)
-    Perl (PerlCAS)
-    Python (pycas)
-    Ruby (rubycas-client)
+- Apache httpd Server (mod_auth_cas module)
+- Java (Java CAS Client)
+- .NET (.NET CAS Client)
+- PHP (phpCAS)
+- Perl (PerlCAS)
+- Python (pycas)
+- Ruby (rubycas-client)
 
 **Applications:**
 
-    Canvas
-    Atlassian Confluence
-    Atlassian JIRA
-    Drupal
-    Liferay
-    uPortal
-    etc.
+- Canvas
+- Atlassian Confluence
+- Atlassian JIRA
+- Drupal
+- Liferay
+- uPortal
+- etc.
 
 When the term “CAS client” appears in this manual without further qualification, it refers to the integration components such as the Java CAS Client rather than to the application relying upon (a client of) the CAS server.
 
@@ -90,20 +90,20 @@ Clients communicate with the server by any of several supported protocols. All t
 
 **List of Supported Protocols:**
 
-    CAS (versions 1, 2, and 3)
-    SAML 1.1 and 2
-    OpenID Connect
-    OpenID
-    OAuth 2.0
-    WS Federation
+- CAS (versions 1, 2, and 3)
+- SAML 1.1 and 2
+- OpenID Connect
+- OpenID
+- OAuth 2.0
+- WS Federation
 
 ### Software Components
 
 It is helpful to describe the CAS server in terms of *three* layered subsystems:
 
-    Web (Spring MVC/Spring Webflow)
-    Ticketing
-    Authentication
+- Web (Spring MVC/Spring Webflow)
+- Ticketing
+- Authentication
 
 Almost all deployment considerations and component configuration involve those three subsystems. The Web tier is the endpoint for communication with all external systems including CAS clients. The Web tier delegates to the ticketing subsystem to generate tickets for CAS client access. The SSO session begins with the issuance of a ticket-granting ticket on successful authentication, thus the ticketing subsystem frequently delegates to the authentication subsystem.
 
@@ -145,12 +145,172 @@ Step 1: Download JDK 11 using the ```wget``` command.
 wget https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz
 ```
 
+### Servelet Containers
+
+There is no officially supported servlet container for CAS, but Apache Tomcat is the most commonly used. Support for a particular servlet container depends on the expertise of community members.
+
+Step 1: Execution
+
+The CAS web application, once built, may be deployed in place with the embedded container via the following command:
+
+```shell
+java -jar /path/to/cas.war
+```
+
+Additionally, it is also possible to run CAS as a fully executable web application:
+
+```shell
+# chmod +x /path/to/cas.war
+/path/to/cas.war
+```
+
+This is achieved via the build process of the deployment overlay where a launch script is inserted at the beginning of the web application artifact. If you wish to see and examine the script, simply run the following commands:
+
+```shell
+ # X is the number of lines from the beginning of the file
+ head -n X /path/to.cas.war
+```
+
+Step 2: Apache Tomcat
+
+Run the following ```gradle``` command:
+
+```gradle
+compile "org.apereo.cas:cas-server-webapp-tomcat:${project.'cas.version'}"
+```
+
+Step 3: IPv4 Configuration
+
+In order to force Apache Tomcat to use IPv4, configure the following as a system property for your run command:
+
+```shell
+-Djava.net.preferIPv4Stack=true 
+```
+
+Step 3: Logging
+
+The embedded Apache Tomcat container is presently unable to display any log messages below INFO even if your CAS log configuration explicitly asks for DEBUG or TRACE level data. See [this bug report](https://github.com/spring-projects/spring-boot/issues/2923) to learn more.
+
+While workarounds and fixes may become available in the future, for the time being, you may execute the following changes to get DEBUG level log data from the embedded Apache Tomcat. This is specially useful if you are troubleshooting the behavior of Tomcat’s internal components such as valves, etc.
+
+- Design a logging.properties file as such:
+
+```properties
+handlers = java.util.logging.ConsoleHandler
+.level = ALL
+java.util.logging.ConsoleHandler.level = FINER
+java.util.logging.ConsoleHandler.formatter = java.util.logging.SimpleFormatter
+```
+
+- Design ajava.util.logging.config.file setting as a system/environment variable or command-line argument whose value is set to the logging.properties path. 
+
+```shell
+java -jar /path/to/cas.war -Djava.util.logging.config.file=/path/to/logging.properties
+```
+
+Step 4: Jetty
+
+Run the following ```Gradle``` command:
+
+```gradle
+compile "org.apereo.cas:cas-server-webapp-jetty:${project.'cas.version'}"
+```
+
+Step 5: Undertow
+
+Run the following ```Gradle``` command:
+
+```gradle
+compile "org.apereo.cas:cas-server-webapp-undertow:${project.'cas.version'}"
+```
+
+Step 6: OS Service Deployment
+
+CAS can be easily started as Unix/Linux services using either ```init.d``` or ```systemd```. 
+
+Windows support is also made available via an external daemon. Note that most if not all of the below strategies attempt to run CAS via an embedded servlet container whose configuration is explained here.
+
+#### ```init.d``` Service
+
+If CAS is built and run as a fully executable web application, then it can be used as an init.d service. Simply symlink the web application file to init.d to support the standard start, stop, restart and status commands.
+
+The configuration built into CAS allows it to interact with the OS system configuration as such:
+
+- Start the service as the user that owns the jar file
+- Track CAS web applications’ PID using /var/run/cas/cas.pid
+- Write console logs to /var/log/cas.log
+
+To install CAS as an ```init.d``` service simply create a symlink:
+
+```shell
+sudo ln -s /path/to/cas.war /etc/init.d/cas
+service cas start
+```
+
+You can also flag the application to start automatically using your standard operating system tools. For example, on Debian:
+
+```shell
+update-rc.d myapp defaults <priority>
+```
+##### Security
+
+When executed as ```root```, as is the case when root is being used to start an init.d service, the CAS default executable script will run the web application as the user which owns the web application file. You should *never* run CAS as ```root``` so the web application file should never be owned by ```root```. 
+
+Instead, create a specific user to run CAS and use chown to make it the owner of the file.   
+For example:
+
+```shell
+chown bootapp:bootapp /path/to/cas.war
+```
+
+You may also take steps to prevent the modification of the CAS web application file. Firstly, configure its permissions so that it cannot be written and can only be read or executed by its owner:
+
+```shell
+chmod 500 /path/to/cas.war
+```
+
+Additionally, you should also take steps to limit the damage if the CAS web application or the account that’s running it is compromised. If an attacker does gain access, they could make the web application file writable and change its contents. One way to protect against this is to make it immutable using ```chattr```:
+
+```shell
+sudo chattr +i /path/to/cas.war
+```
+
+This will prevent any user, including ```root```, from modifying the file.
+
+#### ```systemd``` Service
+
+To install CAS as a ```systemd``` service create a script named ```cas.service``` using the following example and place it in ```/etc/systemd/system``` directory:
+
+```
+[Unit]
+Description=CAS
+After=syslog.target
+
+[Service]
+User=bootapp
+ExecStart=/path/to/cas.war
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
+```
+
+>**[Note]** Remember to change the ```Description```, ```User```, and ```ExecStart``` fields for your deployment.
+
+The user that runs the CAS web application, PID file and console log file are managed by ```systemd``` itself and therefore must be configured using appropriate fields in ```service``` script. Consult the service unit configuration man page for more details.
+
+To flag the application to start automatically on system boot use the following command:
+
+```shell
+systemctl enable cas.service
+```
+
 **Sources:**
 
-https://apereo.github.io/cas/6.1.x/index.html   
-https://apereo.github.io/cas/6.1.x/planning/Architecture.html  
-https://apereo.github.io/cas/6.1.x/planning/Getting-Started.html  
-https://apereo.github.io/cas/6.1.x/planning/Installation-Requirements.html  
-https://apereo.github.io/cas/6.1.x/installation/WAR-Overlay-Installation.html  
+- https://apereo.github.io/cas/6.1.x/index.html   
+- https://apereo.github.io/cas/6.1.x/planning/Architecture.html  
+- https://apereo.github.io/cas/6.1.x/planning/Getting-Started.html  
+- https://apereo.github.io/cas/6.1.x/planning/Installation-Requirements.html  
+- https://apereo.github.io/cas/6.1.x/installation/WAR-Overlay-Installation.html  
 
 >**[Note]** Remember to use markdown syntax to organize information in useful ways.
