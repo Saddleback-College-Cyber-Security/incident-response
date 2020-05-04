@@ -5,7 +5,9 @@
 
 ## Incident Overview  
 
-Network File System (NFS) is a distributed file system protocol originally developed by Sun Microsystems in 1984, allowing a user on a client computer to access files over a computer network much like local storage is accessed. 
+The Network File System (NFS) was developed to allow machines to mount a disk partition on a remote machine as if it were a local disk.
+
+NFS is a distributed file system protocol originally developed by Sun Microsystems in 1984, allowing a user on a client computer to access files over a computer network much like local storage is accessed. 
 
 Research and provide information on the following concepts:  
 
@@ -47,9 +49,22 @@ portmap:ALL
 ```
 When a client tries to connect host.allow is checked first, if the hostis in the file they can connect. It then checks host.deny and rejects any hosts listed, if the client is in niether list they will connect.
 
-- How to access and use an NFS server
-    - Note differences in OS (e.g. Windows, macOS, Linux)
-    - Note differences in privilage requirement (e.g. whether ```sudo``` is needed on Linux)
+## **How to access and use an NFS server**
+##### Ubuntu Client Instalation
+    $ sudo apt install nfs-common   
+##### Configuration 
+The client system needs to mount the remote directory from the host server onto a local directory to access the shared files.
+Preferably the mount point on the client should be located in the ```/mnt``` directory and must be empty  
+Command ex:  
+  
+    $ sudo mount [IP/domain name]:[filepath of the directory on the server] [filepath on client]
+    $ sudo mount 192.198.0.1:/home /mnt/home
+    $ sudo mount bar.cybercity.com:/home/server_folder /mnt/client_mnt_point
+    
+You can also unmount
+
+	$ sudo unmount [filepath on client]  
+
 - How to find an instance running on a system
     - Note differences in OS (e.g. Windows, macOS, Linux)
     - Note differences in privilage requirement (e.g. whether ```sudo``` is needed on Linux)
@@ -57,3 +72,5 @@ When a client tries to connect host.allow is checked first, if the hostis in the
 - Strategies for maintenance (e.g. how to notice malicious activity, protect against attackers etc.)
 
 >**[Note]** Remember to use markdown syntax to organize information in useful ways.
+
+sources: http://nfs.sourceforge.net/
