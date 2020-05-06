@@ -21,9 +21,13 @@ Research and provide information on the following concepts:
    - Common Tasks performed (e.g. setup, configuration, etc.
  
 ## **How to setup an NFS server**
-##### Ubuntu Instalation
+###### Ubuntu Instalation
     $ sudo apt install nfs-kernel-server
     $ sudo systemctl start nfs-kernel-server.service
+###### CentOS Instalation
+	$ yum install nfs-utils
+    
+Co-req: portmap needs to be runing before nfs
 ##### Configuration 
 There are 3 files used in configuring NFS: exports, hosts.allow, and hosts.deny   
 You can decide who can have access to which directories by eddting /etc/exports  
@@ -50,8 +54,10 @@ portmap:ALL
 When a client tries to connect host.allow is checked first, if the hostis in the file they can connect. It then checks host.deny and rejects any hosts listed, if the client is in niether list they will connect.
 
 ## **How to access and use an NFS server**
-##### Ubuntu Client Instalation
-    $ sudo apt install nfs-common   
+###### Ubuntu Client Instalation
+    $ sudo apt install nfs-common
+###### CentOS Client Instalation
+    $ yum install nfs-utils  
 ##### Configuration 
 The client system needs to mount the remote directory from the host server onto a local directory to access the shared files.
 Preferably the mount point on the client should be located in the ```/mnt``` directory and must be empty  
