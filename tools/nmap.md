@@ -63,7 +63,7 @@ $ nmap 10.0.24.*
 
 ## Common Options
 
-Nmap has hunderds of valid options. Use [man](./command_line_nix.md#I-Need-Help,-Where-Can-I-Go? "man on *nix") on *nix systems for a detailed list. 
+Nmap has hundreds of valid options. Use [man](./command_line_nix.md#I-Need-Help,-Where-Can-I-Go? "man on *nix") on *nix systems for a detailed list. 
 >Mixing and matching of options is allowed, however, some options do not work with each other.
 
 ### Target Specification
