@@ -210,7 +210,7 @@ In *My Scans* press on **Launch** button
 3. Export as **HTML file** or **pdf**, depends on the situation, usually HTML variant is a better solution.
 
 
-## Sources:
+## Sources: 
 
 - https://www.tenable.com/downloads/nessus
 - https://docs.tenable.com/nessus/Content/InstallNessusLinux.htm
