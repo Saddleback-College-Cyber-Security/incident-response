@@ -198,6 +198,47 @@ Has a set of presets for different compliances of the scan.
 Recommended to turn on all the plugins for the best result.
 
 
+## Nessus Scanner Templates Chart
+
+### Vulnerability Scans (Common)
+
+| Template                    | Description                                                                                                                                                                                                                                                                                                                                                     |
+|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Advanced  Network  Scan     | A scan without any recommendations, so that you can fully customize the scan settings.                                                                                                                                                                                                                                                                          |
+| Basic Network Scan          | Performs a full system scan that is suitable for any host. For example, you could use this template  to perform an internal vulnerability scan on your organization's systems.                                                                                                                                                                                  |
+| Credentialed Patch Audit    | Authenticates hosts and enumerates missing updates.                                                                                                                                                                                                                                                                                                             |
+| Host Discovery              | Performs a simple scan to discover live hosts and open ports.                                                                                                                                                                                                                                                                                                   |
+| Internal PCI Network Scan   | Performs an internal PCI DSS (11.2.1) vulnerability scan.                                                                                                                                                                                                                                                                                                       |
+| Legacy Web App Scan         | Uses a Nessus scanner to scan your web applications. **[Note]**   Unlike the  Tenable.io Web Application Scanning   scanner, the Nessus scanner does not use a browser to scan your web applications. Therefore, a  **Legacy Web App Scan**  is not as comprehensive as a  **Web App Scan**. For more information, see the  Tenable.io   Web Application Scanning User Guide. |
+| Mobile Device Scan          | Assesses mobile devices via Microsoft Exchange or an MDM.                                                                                                                                                                                                                                                                                                       |
+| PCI Quarterly External Scan | Performs quarterly external scans as required by PCI. **[Note]**     Because the nature of a PCI ASV scan is more paranoid and may lead to false positives, the scan data is not included in the aggregate   Tenable.io   data. This is by design.
+
+
+### Configuration Scans
+
+| Template                   | Description                                             |
+|----------------------------|---------------------------------------------------------|
+| Audit Cloud Infrastructure | Audits the configuration of third-party cloud services. |
+| MDM Config Audit           | Audits the configuration of mobile device managers.     |
+| Offline Config Audit       | Audits the configuration of network devices.            |
+| Policy Compliance Auditing | Audits system configurations against a known baseline.  |
+| SCAP and OVAL Auditing     | Audits systems using SCAP and OVAL definitions.         |
+
+
+### Tactical Scans
+
+| Template                           | Description                                                                           |
+|------------------------------------|---------------------------------------------------------------------------------------|
+| Badlock Detection                  | Performs remote and local checks for CVE-2016-2118 and CVE-2016-0128.                 |
+| Bash Shellshock Detection          | Performs remote and local checks for CVE-2014-6271 and CVE-2014-7169.                 |
+| DROWN Detection                    | Performs remote checks for CVE-2016-0800.                                             |
+| Intel AMT Security BypassDetection | Performs remote and local checks for CVE-2017-5689.                                   |
+| Malware Scan                       | Scans for malware on Windows and Unix systems.                                        |
+| Shadow Brokers Scan                | Scans for vulnerabilities disclosed in the Shadow Brokers leaks.                      |
+| Spectre and Meltdown               | Performs remote and local checks for CVE-2017-5753, CVE-2017-5715, and CVE-2017-5754. |
+| WannaCry Ransomware                | Scans for the WannaCry ransomware.                                                    |
+
+
 ## Nessus Scan Start
 
 In *My Scans* press on **Launch** button
@@ -210,7 +251,7 @@ In *My Scans* press on **Launch** button
 3. Export as **HTML file** or **pdf**, depends on the situation, usually HTML variant is a better solution.
 
 
-## Sources: 
+## Sources:
 
 - https://www.tenable.com/downloads/nessus
 - https://docs.tenable.com/nessus/Content/InstallNessusLinux.htm
