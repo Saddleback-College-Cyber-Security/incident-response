@@ -21,13 +21,17 @@ Research and provide information on the following concepts:
    - Common Tasks performed (e.g. setup, configuration, etc.
  
 ## **How to setup an NFS server**
-###### Ubuntu Instalation
+###### Windows Instalation  
+	Import-Module ServerManager
+	Add-WindowsFeature FS-NFS-Service
+	Import-Module NFS
+###### Ubuntu Instalation  
     $ sudo apt install nfs-kernel-server
     $ sudo systemctl start nfs-kernel-server.service
-###### CentOS Instalation
+###### CentOS Instalation  
 	$ yum install nfs-utils
-    
-Co-req: portmap needs to be runing before nfs
+   
+Co-req: portmap needs to be runing before nfs  
 ##### Configuration 
 There are 3 files used in configuring NFS: exports, hosts.allow, and hosts.deny   
 You can decide who can have access to which directories by eddting /etc/exports  
@@ -54,11 +58,21 @@ portmap:ALL
 When a client tries to connect host.allow is checked first, if the hostis in the file they can connect. It then checks host.deny and rejects any hosts listed, if the client is in niether list they will connect.
 
 ## **How to access and use an NFS server**
+###### Windows Client Instalation
+- Start > Control Panel > Programs
+- Turn Windows features on or off
+- Services for NFS
+- Open regedit
+- Make two new DWORD inside HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default called AnonymousUid and AnonymousGid. Enter the UID and GID of the system hosting the NFS server 
+- Restart the client or computer 
 ###### Ubuntu Client Instalation
     $ sudo apt install nfs-common
 ###### CentOS Client Instalation
     $ yum install nfs-utils  
-##### Configuration 
+##### Windows Configuration
+	$ sudo mount [IP/domain name]:[filepath of the directory on the server] [Drive letter]
+	$ sudo mount 192.198.0.1:/home l:
+##### Linux Configuration 
 The client system needs to mount the remote directory from the host server onto a local directory to access the shared files.
 Preferably the mount point on the client should be located in the ```/mnt``` directory and must be empty  
 Command ex:  
