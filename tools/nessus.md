@@ -239,6 +239,18 @@ Recommended to turn on all the plugins for the best result.
 | WannaCry Ransomware                | Scans for the WannaCry ransomware.                                                    |
 
 
+### Tenable-Provided Agent Templates
+
+| Template                                                                                                                                                       | Description                                                                                                                                                                                                                                        |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Advanced Agent Scan **[Note]** When you create an agent scan using the Advanced Agent Scan template, you must also select the plugins you want to use for the scan. | Scans without any recommendations.                                                                                                                                                                                                                 |
+| Basic Agent Scan                                                                                                                                               | Scans systems connected via Nessus Agents.                                                                                                                                                                                                         |
+| Custom Agent Scan                                                                                                                                              | Scans using a previously defined template.                                                                                                                                                                                                         |
+| Malware Scan                                                                                                                                                   | Scans for malware on systems connected via Nessus Agents. **[Note]** See the Application, Malware, and Content Audits videoand the Application, Malicious Software, and Content Audits video for more information about scanning for malware in Nessus. |
+| Policy Compliance Auditing                                                                                                                                     | Audits systems connected via Nessus Agents.                                                                                                                                                                                                        |
+| SCAP and OVAL Agent Auditing                                                                                                                                   | Audits systems using SCAP and OVAL definitions.                                                                                                                                                                                                    |
+
+
 ## Nessus Scan Start
 
 In *My Scans* press on **Launch** button
@@ -251,10 +263,64 @@ In *My Scans* press on **Launch** button
 3. Export as **HTML file** or **pdf**, depends on the situation, usually HTML variant is a better solution.
 
 
+## Create a New Report
+
+
+1. On the top navigation bar, click **Reports**.
+
+    The **Reports** page appears.
+
+2. In the upper right corner, click the **New Report** button.
+
+    The **Report Templates** section appears, displaying a list of the available report templates.
+
+3. Select a template from the list.
+
+    The **New Report** section appears, displaying the **General** settings.
+
+4. Configure the **General settings**:
+
+    - In the **Targets** box, select a target for the report. By default, the **Target** box is set to **All Assets**.
+    - *(Optional)* Set the **Encrypt PDF** option to **On** and specify a password for the PDF.
+    - *(Optional)* In the **Name** box, specify a name for the report.
+    - *(Optional)* In the **Description** box, modify or replace the default report description.
+    - *(Optional)* In the **Email** box, enter the email addresses for report recipients.
+
+5. *(Optional)* Configure the **Schedule settings**:
+
+    - In the **Settings** section, under **BASIC**, click **Schedule**.
+
+    The Schedule settings appear.
+
+    - Set **Enabled** to **On**, and then specify the desired frequency, start time and date, and timezone.
+
+6. *(Optional)* Configure the **Permissions settings**:
+
+    >**[Note]** If you do not configure the Permissions settings, only you and users with administrator accounts will have access to the report and its results.
+
+In the Settings section, under BASIC, click Permissions.
+
+The Permissions settings appear.
+
+Permissions settings
+
+In the Add users or groups box, type the name of the user or group that you want to give permissions for the report.
+
+The specified user or group appears in a row at the bottom of the User Sharing section.
+
+In the row corresponding to the user or group that you added, in the drop-down box, select a permission.
+
+(Optional) In the Settings section, under BASIC, click Chapters and then review the structure of the results that will be created by the report. This structure cannot be modified.
+At the bottom of the Reports page, click the Save button.
+
+The new report appears in the list in the My Reports folder.
+
+
 ## Sources:
 
 - https://www.tenable.com/downloads/nessus
 - https://docs.tenable.com/nessus/Content/InstallNessusLinux.htm
 - https://docs.tenable.com/nessus/Content/InstallNessusWindows.htm
+- https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Scans/ScannerTemplates.htm
 
 >**[Note]** Remember to use markdown syntax to organize information in useful ways.
