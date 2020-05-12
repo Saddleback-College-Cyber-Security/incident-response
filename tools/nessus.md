@@ -265,7 +265,6 @@ In *My Scans* press on **Launch** button
 
 ## Create a New Report
 
-
 1. On the top navigation bar, click **Reports**.
 
     The **Reports** page appears.
