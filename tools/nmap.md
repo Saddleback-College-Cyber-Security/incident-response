@@ -63,7 +63,7 @@ $ nmap 10.0.24.*
 
 ## Common Options
 
-Nmap has hundreds of valid options. Use [man](./command_line_nix.md#I-Need-Help,-Where-Can-I-Go? "man on *nix") on *nix systems for a detailed list. 
+Nmap has hundreds of valid options. Use [man](./command_line_nix.md#I-Need-Help,-Where-Can-I-Go? "man on *nix") on *nix systems for a detailed list.
 >Mixing and matching of options is allowed, however, some options do not work with each other.
 
 ### Target Specification
@@ -93,9 +93,15 @@ $ nmap -sN <HOST> #TCP NULL scan
 $ nmap -sA <HOST> #TCP ACK scan
 ```
 
+>`-sU` Generally slower than TCP scans since UDP is a connection-less protocol (open ports rarely respond to probes from UDP scans). DNS, SNMP, and DHCP (registered ports 53, 161/162, and 67/68) are three of the most commonly deployed UDP services.
+
 >`-sS` TCP SYN scanning is often referred to as "half-open" scanning, because you don’t open a full TCP connection. The primary advantage to this scanning technique is that fewer sites will log it. You need root privileges to build these custom SYN packets. This is the default scan type for privileged users.
 
 >`-sT` is the most basic form of TCP scanning. One strong advantage to this technique is that you don’t need any special privileges. This sort of scan is easily detectable as target host logs will show a bunch of connection and error messages for the services which accept() the connection just to have it immediately shut- down. This is the default scan type for unprivileged users.
+
+>`-sN` Does not set any bits (TCP flag header is 0). Key advantage is sneaking through certain firewalls and packet filtering routers that block TCP packets. Works against most Unix systems, but does not work well against Microsoft Windows, many Cisco devices, and IBM OS/400 (all ports labeled closed).
+
+>`-sA` Used to map out firewall rulesets, determining whether they are stateful or stateless and which ports are filtered.
 
 ### Port Specification and Scan Order
 
