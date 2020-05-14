@@ -8,13 +8,13 @@
 | Nmap                              |   Jacob, Naveed       |                     
 | Nessus                            |   Aydar               |                     
 | Network Topology                  |   Bryan               |                     
-| Central Logging                   |   Kole, Tasha         |                     
+| Central Logging                   |   Kole                |                     
 | FTP                               |   John                |                     
 | Password Management               |   Cameron             |                     
 | Central Authentication Service    |   Felix Murray        |                     
 | Jenkins                           |                       |                     
 | NFS                               |   Ashkon              |                     
-| Web Application Firewall          |                       |                     
+| Web Application Firewall          |   Tasha               |                     
 | Initial System Setup              |   Cameron             |                     
 | Network Devices                   |   Billy, Dan, Jacob   |                     
 | Session Hijacking                 |   Dan                 |                     
