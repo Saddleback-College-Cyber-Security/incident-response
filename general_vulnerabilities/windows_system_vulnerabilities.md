@@ -1,12 +1,21 @@
 # Windows System Vulnerabilities
 
 [home](../README.md)
-- [Example](#Example)
+- [Introduction](#Introduction)
+- [Common Windows OS Vulnerabilities](#Common-Windows-OS-Vulnerabilities)
+- [Default Application Vulnerabilities](#Default-Application-Vulnerabilities)
+- [Protocol Vulnerabilities](#Protocol-Vulnerabilities)
+- [Older Version Vulnerabilities](#Older-Version-Vulnerabilities)
+- [Popular Application Vulnerabilities](#Popular-Application-Vulnerabilities)
+	- [Zoom app vulnerabilities](#Zoom-app-vulnerabilities)
+	- [Skype app vulnerabilities](#Skype-app-vulnerabilities)
+	- [Protection Strategies for the Above Vulnerabilities](#Protection-Strategies-for-the-Above-Vulnerabilities)
+- [Conclusion](#Conclusion)
+- [References](#References)
 
 ## Introduction
 
 A system Vulnerability is that weaknesses of a system that allows threats to affect the system, generally in a negative manner. All around the world, there are vulnerabilities found in systems which expose systems to threats. With the advent of cybercrimes, there has been an n increase in finding vulnerabilities of systems for exploitations. Over the years, penetration testing has evolved as a major domain which aims at focusing on vulnerabilities of system. In this document, we focus on various vulnerabilities like Operating system vulnerabilities, protocol vulnerabilities, application vulnerabilities and various other vulnerabilities due to older versions of systems. We also present a few protection strategies for all these vulnerabilities for added security of systems and latest strands in security.
-
 
 ## Common Windows OS Vulnerabilities
 
@@ -25,43 +34,46 @@ In networking, protocols are used for communicating between different layers. TC
 There are other protocols vulnerabilities like the SMTP vulnerability with a SMTP hack; the attacker can gain unauthorized access on the email server. In addition to this there are many vulnerabilities HTTP (Hyper Text Transfer Protocol) like SQL injection vulnerability and cross site scripting in which malicious code is injected usually in a scripting language like javascript which is executed as the website loads on the client side.
 
 ## Older Version Vulnerabilities
+
 By older version vulnerabilities, we mean, vulnerabilities in unpatched OS versions. Windows and other operating systems have to be patched for security vulnerabilities to keep the system security up to date. Many softwares and operating system are vulnerable to attacks if their older versions are used. For example Mozilla Firefox older versions are vulnerable to XSS attacks, javascript clipboard access, Buffer overflow when displaying VCard and many others.
 PHP is a scripting language that runs at the server. Much vulnerability has been discovered in older versions which were then patched and new versions were introduced. Vulnerabilities like out-of-bounds read for crafted JPEG data, Reflected XSS on the PHAR 403 and 404 error pages, stack-based buffer overflow and application crash that leads to a denial of service attack and many others. Older Windows versions also have vulnerabilities like Blue Keep vulnerability, Oracle Web Logic Server vulnerability and Adobe Flash Player vulnerability.
 
 ## Popular Application Vulnerabilities
+
 Many popular applications like Office 365 are also vulnerable to attacks. Microsoft Office 365 is a leading application in the software market. A few vulnerabilities were discovered in the application like the Microsoft Office Spoofing Vulnerability. In this vulnerability, the attacker could perform spoofing and read or writer into a document without the consent or knowledge of the user. In vulnerability, Microsoft Office Access Connectivity Engine Remote Code Execution Vulnerability, the attacker could execute a code remotely into the system and thus memory objects could be altered or destroyed. In Microsoft Excel Remote Code Execution Vulnerability, the same vulnerability explained previously for Access is there for Excel; hence Exec Code overflow is the type of this vulnerability.
 
-### Zoom app vulnerabilities: 
+### Zoom app vulnerabilities
 
 Zoom app is a very popular video conferencing app. There are many discovered vulnerabilities of this software. For example the Exec Code vulnerability in which a remote attacker can execute malicious code on macOS. Vulnerability is when an attacker can force a user to join a meeting while the camera active. The machine on which the app was installed remains vulnerable even after the app is uninstalled(“Zoom : Security Vulnerabilities”, n.d.).
 
-## Skype app vulnerabilities: 
+### Skype app vulnerabilities
 
 Skype is collaboration software widely used in business industry. There are much vulnerability like stack buffer overflow vulnerability in Microsoft Skype 7.2, 7.35, Exec Code vulnerability and many others(“Microsoft Skype : Security Vulnerabilities”, n.d).
 
 ### Protection Strategies for the Above Vulnerabilities
+
 Now we discuss a few protection strategies for the vulnerabilities he latest Windows 10 must be installed with the latest patch. To stay protected from Web based attacks, it is important to disable javascript. For protection from network protocol vulnerabilities, the network admin must deploy Intrusion prevention Systems and Intrusion detection systems for effective security.
 For Microsoft Office 365 security, it is advised to setup multi-factor authentication, make use of dedicated admin accounts, protect email from phishing attacks, take proper protection against ransomware attack and raise level of 
 protection against malware. For Zoom related vulnerabilities, it is important to adopt best practices like disable guest screen sharing, keep credentials safe, ensure the use of waiting rooms [@Aten , 2020] (Aten, 2020).
 
 ## Conclusion
+
 Vulnerability management is a very important aspect of security management. For many years pen testers have been keen in discovering vulnerabilities in systems before an attacker does. It is hence important to know the vulnerabilities of every system under use. In this document, we have discussed vulnerabilities from various aspects like Common Operating system vulnerabilities, vulnerabilities of older systems, network protocol vulnerabilities and Popular Application Vulnerabilities like Office 365 and Zoom. Protection strategies against vulnerabilities and best practices from security perspectives are also mentioned. It is nevertheless, necessary to keep user credentials safe, the antivirus and operating system updated and adopts state of the art security practices.
 
-
 ## References
-[Top Windows 10 OS Vulnerabilities and How to Fix Them(Guidelines)](https://antivirus.comodo.com/blog/computer-safety/fix-top-10-windows-vulnerabilities/)    
 
-[PHP: Security Vulnerabilities](https://www.cvedetails.com/vulnerability-list/vendor_id-74/product_id-128/PHP-PHP.html)  
+[Top Windows 10 OS Vulnerabilities and How to Fix Them(Guidelines)](https://antivirus.comodo.com/blog/computer-safety/fix-top-10-windows-vulnerabilities/)
 
-[Wordpress : Security Vulnerabilities](https://www.cvedetails.com/vulnerability-list/vendor_id-2337/product_id-4096/)    
+[PHP: Security Vulnerabilities](https://www.cvedetails.com/vulnerability-list/vendor_id-74/product_id-128/PHP-PHP.html)
 
-[A Quick Look at Some Old and New Security Vulnerabilities Which Need to be Patched Before 2020:](https://cyware.com/news/a-quick-look-at-some-old-and-new-security-vulnerabilities-which-need-to-be-patched-before-2020-8152ed02)    
+[Wordpress : Security Vulnerabilities](https://www.cvedetails.com/vulnerability-list/vendor_id-2337/product_id-4096/)
 
-[Microsoft Office 365 : Security Vulnerabilities](https://www.cvedetails.com/vulnerability-list/vendor_id-26/product_id-51636/Microsoft-Office-365.html)  
+[A Quick Look at Some Old and New Security Vulnerabilities Which Need to be Patched Before 2020:](https://cyware.com/news/a-quick-look-at-some-old-and-new-security-vulnerabilities-which-need-to-be-patched-before-2020-8152ed02)
 
-[Zoom : Security Vulnerabilities](https://www.cvedetails.com/vulnerability-list/vendor_id-2159/Zoom.html)  
+[Microsoft Office 365 : Security Vulnerabilities](https://www.cvedetails.com/vulnerability-list/vendor_id-26/product_id-51636/Microsoft-Office-365.html)
 
-[Microsoft Skype : Security Vulnerabilities](https://www.cvedetails.com/vulnerability-list/vendor_id-26/product_id-35646/Microsoft-Skype.html)  
+[Zoom : Security Vulnerabilities](https://www.cvedetails.com/vulnerability-list/vendor_id-2159/Zoom.html)
 
-[5 Ways to Protect Your Zoom Meetings From Hackers.](https://www.inc.com/jason-aten/hackers-are-trying-to-get-into-your-zoom-meetings-here-are-5-ways-to-stop-them.html)   
->**[Note]** Remember to use markdown syntax to organize information in useful ways.
+[Microsoft Skype : Security Vulnerabilities](https://www.cvedetails.com/vulnerability-list/vendor_id-26/product_id-35646/Microsoft-Skype.html)
+
+[5 Ways to Protect Your Zoom Meetings From Hackers.](https://www.inc.com/jason-aten/hackers-are-trying-to-get-into-your-zoom-meetings-here-are-5-ways-to-stop-them.html)
