@@ -1,7 +1,22 @@
 # Central Authentication Service
 
 [home](../README.md)
-- [Example](#Example)
+- [Incident Overview](#Incident-Overview)
+- [Overview of CAS](#Overview-of-CAS)
+- [CAS Architecture (Apereo CAS Enterprise)](#CAS-Architecture-(Apereo-CAS-Enterprise))
+	- [System Components](#System-Components)
+	- [CAS Server](#CAS-Server)
+	- [CAS Clients](#CAS-Clients)
+	- [Suppported Protocols ](#Suppported-Protocols)
+	- [Software Components](#Software-Components)
+- [Installation](#Installation)
+	- [Java](#Java)
+		- [Windows](#Windows)
+		- [Linux](#Linux)
+	- [Servelet Containers](#Servelet-Containers)
+		- [init.d Service](#init.d-Service)
+			- [Security](#Security)
+		- [systemd Service](#systemd-Service)
 
 ## Incident Overview  
 
@@ -13,8 +28,8 @@ The name CAS also refers to a software package that implements this protocol.
 Research and provide information on the following concepts:  
 
 - How to find an instance of CAS running on a system
-    - Note differences in OS (e.g. Windows, macOS, Linux)
-    - Note differences in privilage requirement (e.g. whether ```sudo``` is needed on Linux)
+	- Note differences in OS (e.g. Windows, macOS, Linux)
+	- Note differences in privilage requirement (e.g. whether ```sudo``` is needed on Linux)
 - Common vulnerabilities and how to protect against them
 - Strategies for maintenance (e.g. how to notice malicious activity, protect against attackers etc.)
 
@@ -29,22 +44,22 @@ CAS can be implemented in two main different ways, those being **Apereo CAS Impl
 
 Looking at Apereo, it supports the contains the follow features: 
 
-| Feature                                                                                                                                                       |
-| :---                                                                                                                                                          |
-| CAS v1, v2 and v3 Protocol                                                                                                                                    |                  
-| SAML v1 and v2 Protocol                                                                                                                                       |                    
-| OAuth Protocol                                                                                                                                                |                     
-| OpenID & OpenID Connect Protocol                                                                                                                              |                     
-| WS-Federation Passive Requestor Protocol                                                                                                                      |                 
-| Authentication via JAAS, LDAP, RDBMS, X.509, Radius, SPNEGO, JWT, Remote, Trusted, BASIC, Apache Shiro, MongoDB, Pac4J and more.                              |                     
-| Delegated authentication to WS-FED, Facebook, Twitter, SAML IdP, OpenID, OpenID Connect, CAS and more.                                                        |                    
-| Authorization via ABAC, Time/Date, REST, Internet2's Grouper and more.                                                                                        |                   
-| HA clustered deployments via Hazelcast, Ehcache, JPA, Memcached, Apache Ignite, MongoDB, Redis, Couchbase and more.                                           |                     
-| Application registration backed by JSON, LDAP, YAML, JPA, Couchbase, MongoDB and more.                                                                        |                    
-| Multifactor authentication via Duo Security, SAASPASS, YubiKey, RSA, Google Authenticator (TOTP) and more                                                     |                    
-| Administrative UIs to manage logging, monitoring, statistics, configuration, client registration and more.                                                    |                   
-| Global and per-application user interface theme and branding.                                                                                                 |                     
-| Password management and password policy enforcement.                                                                                                          |                   
+| Feature |
+| :--- |
+| CAS v1, v2 and v3 Protocol |
+| SAML v1 and v2 Protocol |
+| OAuth Protocol |
+| OpenID & OpenID Connect Protocol |
+| WS-Federation Passive Requestor Protocol |
+| Authentication via JAAS, LDAP, RDBMS, X.509, Radius, SPNEGO, JWT, Remote, Trusted, BASIC, Apache Shiro, MongoDB, Pac4J and more |
+| Delegated authentication to WS-FED, Facebook, Twitter, SAML IdP, OpenID, OpenID Connect, CAS and more |
+| Authorization via ABAC, Time/Date, REST, Internet2's Grouper and more |
+| HA clustered deployments via Hazelcast, Ehcache, JPA, Memcached, Apache Ignite, MongoDB, Redis, Couchbase and more |
+| Application registration backed by JSON, LDAP, YAML, JPA, Couchbase, MongoDB and more |
+| Multifactor authentication via Duo Security, SAASPASS, YubiKey, RSA, Google Authenticator (TOTP) and more |
+| Administrative UIs to manage logging, monitoring, statistics, configuration, client registration and more |
+| Global and per-application user interface theme and branding |
+| Password management and password policy enforcement |
 
 ## CAS Architecture (Apereo CAS Enterprise)
 
@@ -136,13 +151,13 @@ Step 2: Run the downloaded installer to install.
 Step 0 (Optional): Install ```wget```.
 
 ```shell
-sudo apt install wget
+$ sudo apt install wget
 ```
 
 Step 1: Download JDK 11 using the ```wget``` command.
 
 ```shell
-wget https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz
+$ wget https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz
 ```
 
 ### Servelet Containers
@@ -154,21 +169,21 @@ Step 1: Execution
 The CAS web application, once built, may be deployed in place with the embedded container via the following command:
 
 ```shell
-java -jar /path/to/cas.war
+$ java -jar /path/to/cas.war
 ```
 
 Additionally, it is also possible to run CAS as a fully executable web application:
 
 ```shell
-# chmod +x /path/to/cas.war
-/path/to/cas.war
+$ # chmod +x /path/to/cas.war
+$ /path/to/cas.war
 ```
 
 This is achieved via the build process of the deployment overlay where a launch script is inserted at the beginning of the web application artifact. If you wish to see and examine the script, simply run the following commands:
 
 ```shell
- # X is the number of lines from the beginning of the file
- head -n X /path/to.cas.war
+$ # X is the number of lines from the beginning of the file
+$ head -n X /path/to.cas.war
 ```
 
 Step 2: Apache Tomcat
@@ -205,7 +220,7 @@ java.util.logging.ConsoleHandler.formatter = java.util.logging.SimpleFormatter
 - Design ajava.util.logging.config.file setting as a system/environment variable or command-line argument whose value is set to the logging.properties path. 
 
 ```shell
-java -jar /path/to/cas.war -Djava.util.logging.config.file=/path/to/logging.properties
+$ java -jar /path/to/cas.war -Djava.util.logging.config.file=/path/to/logging.properties
 ```
 
 Step 4: Jetty
@@ -243,14 +258,14 @@ The configuration built into CAS allows it to interact with the OS system config
 To install CAS as an ```init.d``` service simply create a symlink:
 
 ```shell
-sudo ln -s /path/to/cas.war /etc/init.d/cas
-service cas start
+$ sudo ln -s /path/to/cas.war /etc/init.d/cas
+$ service cas start
 ```
 
 You can also flag the application to start automatically using your standard operating system tools. For example, on Debian:
 
 ```shell
-update-rc.d myapp defaults <priority>
+$ update-rc.d myapp defaults <priority>
 ```
 ##### Security
 
@@ -260,19 +275,19 @@ Instead, create a specific user to run CAS and use chown to make it the owner of
 For example:
 
 ```shell
-chown bootapp:bootapp /path/to/cas.war
+$ chown bootapp:bootapp /path/to/cas.war
 ```
 
 You may also take steps to prevent the modification of the CAS web application file. Firstly, configure its permissions so that it cannot be written and can only be read or executed by its owner:
 
 ```shell
-chmod 500 /path/to/cas.war
+$ chmod 500 /path/to/cas.war
 ```
 
 Additionally, you should also take steps to limit the damage if the CAS web application or the account that’s running it is compromised. If an attacker does gain access, they could make the web application file writable and change its contents. One way to protect against this is to make it immutable using ```chattr```:
 
 ```shell
-sudo chattr +i /path/to/cas.war
+$ sudo chattr +i /path/to/cas.war
 ```
 
 This will prevent any user, including ```root```, from modifying the file.
@@ -302,15 +317,13 @@ The user that runs the CAS web application, PID file and console log file are ma
 To flag the application to start automatically on system boot use the following command:
 
 ```shell
-systemctl enable cas.service
+$ systemctl enable cas.service
 ```
 
 **Sources:**
 
-- https://apereo.github.io/cas/6.1.x/index.html   
-- https://apereo.github.io/cas/6.1.x/planning/Architecture.html  
-- https://apereo.github.io/cas/6.1.x/planning/Getting-Started.html  
-- https://apereo.github.io/cas/6.1.x/planning/Installation-Requirements.html  
-- https://apereo.github.io/cas/6.1.x/installation/WAR-Overlay-Installation.html  
-
->**[Note]** Remember to use markdown syntax to organize information in useful ways.
+- https://apereo.github.io/cas/6.1.x/index.html
+- https://apereo.github.io/cas/6.1.x/planning/Architecture.html
+- https://apereo.github.io/cas/6.1.x/planning/Getting-Started.html
+- https://apereo.github.io/cas/6.1.x/planning/Installation-Requirements.html
+- https://apereo.github.io/cas/6.1.x/installation/WAR-Overlay-Installation.html
