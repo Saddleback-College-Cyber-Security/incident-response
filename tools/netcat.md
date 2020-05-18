@@ -9,7 +9,6 @@
 - [Sending Data](#Sending-Data)
 - [Listening for Data](#Listening-for-Data)
 
-
 ## About
 
 [Netcat](https://nc110.sourceforge.io/ "Official Documentation") is a powerful networking utility for reading from and writing to network using TCP or UDP. The command is designed to be a dependable back-end that can be used directly or easily driven by other programs and scripts.

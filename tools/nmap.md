@@ -50,7 +50,6 @@ You will now be able to type your commands in a terminal window.
 
 ## Usage
 
-
 ```shell
 $ nmap [OPTIONS] <HOST> #Scan HOST (HOST can be a single ip, range, subnet, or individual hosts separated with spaces)
 $ namp 10.0.24.5
