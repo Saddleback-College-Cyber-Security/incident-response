@@ -1,8 +1,6 @@
-
 # **Central Logging**
 
-[home](../README.md)
-- [TITLE](#TITLE) <- NEED TO CONVERT TITLES TO HEADERS
+[**Graylogs Home**](../README.md)
 
 **Source:** http://docs.graylog.org/en/2.4/pages/installation/os/ubuntu.html
 
@@ -16,13 +14,13 @@
 
 **Prerequisites:**
 
-    $ sudo apt-get update && sudo apt-get upgrade
+	$ sudo apt-get update && sudo apt-get upgrade
 
-    $ sudo apt-get install apt-transport-https openjdk-8-jre-headless uuid-runtime pwgen
+	$ sudo apt-get install apt-transport-https openjdk-8-jre-headless uuid-runtime pwgen
 
 **If you get an error stating Unable to locate package, you likely need to enable the universe repository which can be done typing the below command, and subsequent commands as follows:**
 
-    $ sudo add-apt-repository universe
+	$ sudo add-apt-repository universe
 
 	$ sudo apt-get update && sudo apt-get upgrade
 

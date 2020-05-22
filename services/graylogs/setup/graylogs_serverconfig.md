@@ -1,5 +1,7 @@
 # server.conf
 
+[**Graylogs Home**](../README.md)
+
 **Source:** http://docs.graylog.org/en/2.4/pages/installation/os/ubuntu.html
 
 **Summary:** This config includes general information, web and rest API, and elastic search. If any other infromation is needed for config visit the link above.
@@ -55,7 +57,7 @@ The backslash character must be escaped as a double backslash. For example:
 
 * Every slave node will accept messages just as the master nodes. Nodes will fall back to slave mode if there already is a master in the cluster.
 
-        node_id_file = /etc/graylog/server/<node-id>
+	node_id_file = /etc/graylog/server/<node-id>
 
 * The auto-generated node ID will be stored in this file and read after restarts. It is a good idea to use an absolute file path here if you are starting Graylog server from init scripts or similar.
 
@@ -73,7 +75,7 @@ The backslash character must be escaped as a double backslash. For example:
 
 * The default root user is named admin.
 
-        root_password_sha2 = <SHA2>
+	root_password_sha2 = <SHA2>
 
 * A SHA2 hash of a password you will use for your initial login. Set this to a SHA2 hash generated with echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1 and you will be able to log in to the web interface with username admin and password yourpassword.
 
@@ -85,19 +87,19 @@ The backslash character must be escaped as a double backslash. For example:
 
 * The email address of the root user. Default is empty.
 
-        root_timezone = UTC
+	root_timezone = UTC
 
 * The time zone setting of the root user. See this list of valid time zones. Default is UTC.
 
-        bin_dir = bin
+	bin_dir = bin
 
 * This directory contains binaries that are used by the Graylog server. (relative or absolute)
 
-        data_dir = data
+	data_dir = data
       
 * This directory is used to store Graylog server state. (relative or absolute)
 
-        plugin_dir = plugin
+	plugin_dir = plugin
 
 * Set plugin directory here (relative or absolute)
 
@@ -111,7 +113,7 @@ The backslash character must be escaped as a double backslash. For example:
 
 * If the port is omitted, Graylog will use port 9000 by default.
 
-        http_publish_uri = http://$http_bind_address/
+	http_publish_uri = http://$http_bind_address/
 
 * The HTTP URI of this Graylog node which is used to communicate with the other Graylog nodes in the cluster and by all clients using the Graylog web interface.
 
@@ -123,7 +125,7 @@ The backslash character must be escaped as a double backslash. For example:
 
 * If 
 
-        http_bind_address 
+	http_bind_address 
 
 contains a wildcard IPv4 address (0.0.0.0), http_publish_uri will be filled with the first non-loopback IPv4 address of this machine instead.
 
@@ -137,7 +139,7 @@ contains a wildcard IPv4 address (0.0.0.0), http_publish_uri will be filled with
 
 * This setting can be overriden on a per-request basis with the “X-Graylog-Server-URL” HTTP request header.
 
-        http_enable_cors = true
+	http_enable_cors = true
 
 * Enable CORS headers for HTTP interface.
 
@@ -145,35 +147,35 @@ contains a wildcard IPv4 address (0.0.0.0), http_publish_uri will be filled with
 
 * If these are disabled, modern browsers will not be able to retrieve resources from the server.
 
-        http_enable_gzip = true
+	http_enable_gzip = true
 
 * This compresses API responses and therefore helps to reduce overall round trip times.
 
-        http_max_header_size = 8192
+	http_max_header_size = 8192
 
 * The maximum size of the HTTP request headers in bytes.
 
-        http_thread_pool_size = 16
+	http_thread_pool_size = 16
 
 * The size of the thread pool used exclusively for serving the HTTP interface.
 
-        http_enable_tls = false
+	http_enable_tls = false
 
 * This secures the communication with the HTTP interface with TLS to prevent request forgery and eavesdropping.
 
-        http_tls_cert_file = /path/to/graylog.crt
+	http_tls_cert_file = /path/to/graylog.crt
 
 * The X.509 certificate chain file in PEM format to use for securing the HTTP interface.
 
-        http_tls_key_file = /path/to/graylog.key
+	http_tls_key_file = /path/to/graylog.key
 
 * The PKCS#8 private key file in PEM format to use for securing the HTTP interface.
 
-        http_tls_key_password = secret
+	http_tls_key_password = secret
 
 * The password to unlock the private key used for securing the HTTP interface. (if key is encrypted)
 
-        trusted_proxies = 127.0.0.1/32, 0:0:0:0:0:0:0:1/128
+	trusted_proxies = 127.0.0.1/32, 0:0:0:0:0:0:0:1/128
 
 * Comma separated list of trusted proxies that are allowed to set the client address with X-Forwarded-For header. May be subnets, or hosts.
 
@@ -189,19 +191,19 @@ contains a wildcard IPv4 address (0.0.0.0), http_publish_uri will be filled with
 
 * Default: http://127.0.0.1:9200
 
-        elasticsearch_connect_timeout = 10s
+	elasticsearch_connect_timeout = 10s
 
 * Maximum amount of time to wait for successfull connection to Elasticsearch HTTP port.
 
 * Default: 10 seconds
 
-        elasticsearch_socket_timeout = 60s
+	elasticsearch_socket_timeout = 60s
 
 * Maximum amount of time to wait for reading back a response from an Elasticsearch server.
 
 * Default: 60 seconds
 
-        elasticsearch_idle_timeout = -1s
+	elasticsearch_idle_timeout = -1s
 
 * Maximum idle time for an Elasticsearch connection. If this is exceeded, this connection will be tore down.
 
@@ -213,13 +215,13 @@ contains a wildcard IPv4 address (0.0.0.0), http_publish_uri will be filled with
 
 * Default: 200
 
-        elasticsearch_max_total_connections_per_route = 20
+	elasticsearch_max_total_connections_per_route = 20
 
 * Maximum number of total connections per Elasticsearch route (normally this means per elasticsearch server).
 
 * Default: 20
 
-        elasticsearch_max_retries = 2
+	elasticsearch_max_retries = 2
 
 * Maximum number of times Graylog will retry failed requests to Elasticsearch.
 
@@ -243,25 +245,25 @@ elasticsearch_discovery_filter = rack:42
 
 * Default: empty
 
-        elasticsearch_discovery_frequency = 30s
+	elasticsearch_discovery_frequency = 30s
 
 * Frequency of the Elasticsearch node discovery.
 
 * Default: 30 seconds
 
-        elasticsearch_discovery_default_scheme = http
+	elasticsearch_discovery_default_scheme = http
 
 * Set the default scheme when connecting to Elasticsearch discovered nodes. (available options: http, https)
 
 * Default: http
 
-        elasticsearch_compression_enabled = false
+	elasticsearch_compression_enabled = false
 
 * Enable payload compression for Elasticsearch requests.
 
 * Default: false
 
-        elasticsearch_use_expect_continue = true
+	elasticsearch_use_expect_continue = true
 
 * Enable use of “Expect: 100-continue” Header for Elasticsearch index requests. If this is disabled, Graylog cannot properly handle HTTP 413 Request Entity Too Large errors.
 
