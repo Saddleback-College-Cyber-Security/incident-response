@@ -1,31 +1,6 @@
 # CEH Incident Response
 
 - [Welcome](#Welcome)
-	- [Table Of Contents](#Table-Of-Contents)
-- [For Students in CEH](#For-Students-in-CEH)
-	- [Grading](#Grading)
-	- [Getting Started](#Getting-Started)
-	- [Commit Formatting](#Commit-Formatting)
-	- [Adding New Files](#Adding-New-Files)
-	- [Final Remarks](#Final-Remarks)
-
-## Welcome
-
-Hello!  
-
-If you are reading this, it means you have found the CEH / Saddleback College Cyber Operations Club Incident Response Github.
-
-This document serves to provide information on the various technologies and protocols commonly seen throughout the information security world. 
-
-Inside the directory `readme` you will find the following goodies to get you started on your journey.
-
-- A list of topics being investigated (feel free to add to this!)
-- A cheatsheet for markdown
-- A list of all CEH students and their respective section assignments (this list is mostly for grading; feel free to add to any section!)
-- A *very large* PDF with some introductory information on many of the topics in this 
-
-### Table Of Contents
-
 - General Vulnerabilities
 	- [Linux System Vulnerabilities](./general_vulnerabilities/linux_system_vulnerabilities.md)
 	- [Malware](./general_vulnerabilities/malware.md)
@@ -51,6 +26,20 @@ Inside the directory `readme` you will find the following goodies to get you sta
 	- [NetCat](./tools/netcat.md)
 	- [Nmap](./tools/nmap.md)
 
+## Welcome
+
+Hello!
+
+If you are reading this, it means you have found the CEH / Saddleback College Cyber Operations Club Incident Response Github.
+
+This document serves to provide information on the various technologies and protocols commonly seen throughout the information security world. 
+
+Inside the directory `readme` you will find the following goodies to get you started on your journey.
+
+- A list of topics being investigated (feel free to add to this!)
+- A cheatsheet for markdown
+- A list of all CEH students and their respective section assignments (this list is mostly for grading; feel free to add to any section!)
+- A *very large* PDF with some introductory information on many of the topics in this 
 
 ## For Students in CEH
 
