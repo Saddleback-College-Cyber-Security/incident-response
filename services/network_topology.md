@@ -1,9 +1,10 @@
 # Network Topology(Mapping)
 
-[home](../README.md)
-- [Example](#Example)
+[**Incident Response Home**](../README.md)
+- [Incident Overview](#Incident-Overview)
+- [Sources](#Sources)
 
-## Incident Overview  
+## Incident Overview
 
 Network topology is the arrangement of the elements of a communication network. Network topology can be used to define or describe the arrangement of various types of telecommunication networks.   
 
@@ -30,7 +31,7 @@ Network Mapping tools:
 
 -  PRTG Network Monitor
 
-### -Sources
+## Sources
 
 https://www.goodfirms.co/network-mapping-software/
 

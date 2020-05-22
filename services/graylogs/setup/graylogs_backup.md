@@ -1,4 +1,7 @@
-# Backup # 
+# Backup
+
+[**Graylogs Home**](../README.md)
+
 When it comes to backup in a Graylog setup it is not easy to answer. You need to consider what type of backup will suit your needs.
 
 Your Graylog Server setup and settings are easy to backup with a __[MongoDB dump](https://docs.mongodb.com/manual/reference/program/mongodump/#bin.mongodump)__  and a filesystem backup of all configuration files.

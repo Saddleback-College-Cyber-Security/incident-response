@@ -1,8 +1,48 @@
 # Nessus
 
-[home](../README.md)
-- [Example](#Example)
+TODO: Clean up markdown formatting
 
+[**Incident Response Home**](../README.md)
+
+- [Incident Overview](#Incident-Overview)
+- [Installation](#Installation)
+	- [Installation from browser](#Installation-from-browser)
+	- [Installation from command prompt on Linux](#Installation-from-command-prompt-on-Linux)
+	- [Installation on Windows](#Installation-on-Windows)
+		- [Download Nessus Package File](#Download-Nessus-Package-File)
+		- [Start Nessus Installation](#Start-Nessus-Installation)
+		- [Complete the Windows InstallShield Wizard.](#Complete-the-Windows-InstallShield-Wizard.)
+			- [If presented, Install WinPcap](#If-presented,-Install-WinPcap)
+	- [Nessus installation steps](#Nessus-installation-steps)
+- [Nessus scan setup](#Nessus-scan-setup)
+	- [Advanced Scan](#Advanced-Scan)
+		- [Settings Tab](#Settings-Tab)
+			- [Basic](#Basic)
+				- [General](#General)
+				- [Schedule](#Schedule)
+				- [Notifications](#Notifications)
+			- [Discovery](#Discovery)
+				- [Host Discovery](#Host-Discovery)
+				- [Port Scanning](#Port-Scanning)
+				- [Port Scanning](#Port-Scanning)
+				- [Service Discovery](#Service-Discovery)
+			- [Assessment](#Assessment)
+				- [General](#General)
+				- [Malware](#Malware)
+			- [Advanced](#Advanced)
+		- [Compliance](#Compliance)
+		- [Plugins](#Plugins)
+- [Nessus Scanner Templates Chart](#Nessus-Scanner-Templates-Chart)
+	- [Vulnerability Scans (Common)](#Vulnerability-Scans-(Common))
+	- [Configuration Scans](#Configuration-Scans)
+	- [Tactical Scans](#Tactical-Scans)
+	- [Tenable-Provided Agent Templates](#Tenable-Provided-Agent-Templates)
+- [Nessus Scan Start](#Nessus-Scan-Start)
+- [Exporting of Scan Results](#Exporting-of-Scan-Results)
+- [Create a New Report](#Create-a-New-Report)
+	- [Run a Report](#Run-a-Report)
+	- [Report Templates](#Report-Templates)
+- [Sources](#Sources)
 
 ## Incident Overview
 
@@ -13,9 +53,9 @@ Research and provide information on the following concepts:
 - Process for installing Nessus
 - Configuration settings for making user scans and policies
 - Running different kinds of scans
-    - Quick Scan
-    - Full Scan
-    - etc. (look into other scans that may be useful to know)
+	- Quick Scan
+	- Full Scan
+	- etc. (look into other scans that may be useful to know)
 
 
 ## Installation
@@ -70,7 +110,7 @@ FreeBSD version 10
 4. On the **Destination Folder** screen, select the **Next** button to accept the default installation folder. Otherwise, select the **Change** button to install Nessus to a different folder.
 5. On the **Ready to Install the Program** screen, select the **Install** button.
 
-    The **Installing Tenable, Inc. Nessus** screen will be displayed and a **Status** indication bar will illustrate the installation progress. The process may take several minutes.
+	The **Installing Tenable, Inc. Nessus** screen will be displayed and a **Status** indication bar will illustrate the installation progress. The process may take several minutes.
 
 
 ##### If presented, Install WinPcap
@@ -84,7 +124,7 @@ As part of the Nessus installation process, WinPcap needs to be installed. If Wi
 The **Tenable Nessus InstallShield Wizard Completed** screen appears.
 5. Select the **Finish** button.
 
-    After the **InstallShield Wizard** completes, the **Welcome to Nessus** page loads in your default browser.
+	After the **InstallShield Wizard** completes, the **Welcome to Nessus** page loads in your default browser.
 >**[Note]** Perform the remaining **Nessus installation steps** in your web browser.
 
 
@@ -159,9 +199,9 @@ Local Host Enumerators:
 
 ###### Port Scanning
 - **SYN**.
-    - Override automatic detection
-        - Use soft detection (*recommended*)
-        - Use aggressive detection (*makes scan slower*)
+	- Override automatic detection
+		- Use soft detection (*recommended*)
+		- Use aggressive detection (*makes scan slower*)
 - **UDP**.
 
 
@@ -267,62 +307,62 @@ In *My Scans* press on **Launch** button
 
 1. On the top navigation bar, click **Reports**.
 
-    The **Reports** page appears.
+	The **Reports** page appears.
 
 2. In the upper right corner, click the **New Report** button.
 
-    The **Report Templates** section appears, displaying a list of the available report templates.
+	The **Report Templates** section appears, displaying a list of the available report templates.
 
 3. Select a template from the list.
 
-    The **New Report** section appears, displaying the **General** settings.
+	The **New Report** section appears, displaying the **General** settings.
 
 4. Configure the **General settings**:
 
-    - In the **Targets** box, select a target for the report. By default, the **Target** box is set to **All Assets**.
-    - *(Optional)* Set the **Encrypt PDF** option to **On** and specify a password for the PDF.
-    - *(Optional)* In the **Name** box, specify a name for the report.
-    - *(Optional)* In the **Description** box, modify or replace the default report description.
-    - *(Optional)* In the **Email** box, enter the email addresses for report recipients.
+	- In the **Targets** box, select a target for the report. By default, the **Target** box is set to **All Assets**.
+	- *(Optional)* Set the **Encrypt PDF** option to **On** and specify a password for the PDF.
+	- *(Optional)* In the **Name** box, specify a name for the report.
+	- *(Optional)* In the **Description** box, modify or replace the default report description.
+	- *(Optional)* In the **Email** box, enter the email addresses for report recipients.
 
 5. *(Optional)* Configure the **Schedule settings**:
 
-    - In the **Settings** section, under **BASIC**, click **Schedule**.
+	- In the **Settings** section, under **BASIC**, click **Schedule**.
 
-    The Schedule settings appear.
+	The Schedule settings appear.
 
-    - Set **Enabled** to **On**, and then specify the desired frequency, start time and date, and timezone.
+	- Set **Enabled** to **On**, and then specify the desired frequency, start time and date, and timezone.
 
 6. *(Optional)* Configure the **Permissions settings**:
 
-    >**[Note]** If you do not configure the **Permissions** settings, only you and users with administrator accounts will have access to the report and its results.
+	>**[Note]** If you do not configure the **Permissions** settings, only you and users with administrator accounts will have access to the report and its results.
 
-    - In the **Settings** section, under **BASIC**, click **Permissions**.
+	- In the **Settings** section, under **BASIC**, click **Permissions**.
 
-    The Permissions settings appear.
+	The Permissions settings appear.
 
-    - In the **Add users or groups** box, type the name of the user or group that you want to give permissions for the report.
+	- In the **Add users or groups** box, type the name of the user or group that you want to give permissions for the report.
 
-    The specified user or group appears in a row at the bottom of the **User Sharing** section.
+	The specified user or group appears in a row at the bottom of the **User Sharing** section.
 
-    - In the row corresponding to the user or group that you added, in the drop-down box, select a permission.
+	- In the row corresponding to the user or group that you added, in the drop-down box, select a permission.
 
 7. *(Optional)* In the **Settings** section, under **BASIC**, click **Chapters** and then review the structure of the results that will be created by the report. This structure cannot be modified.
 
 8. At the bottom of the **Reports** page, click the **Save** button.
 
-    The new report appears in the list in the **My Reports** folder.
+	The new report appears in the list in the **My Reports** folder.
 
 
 ### Run a Report
 
 1. In the top navigation bar, click **Reports**.
 
-    The **Reports** page appears.
+	The **Reports** page appears.
 
 2. In the row corresponding to the report that you want to run, click the **Launch button** button.
 
-    In that row, the **Running icon** image appears, indicating that the report is running.
+	In that row, the **Running icon** image appears, indicating that the report is running.
 
 
 ### Report Templates
@@ -347,7 +387,7 @@ In *My Scans* press on **Launch** button
 | Wireless Configuration Report                   | As organizations continue to evolve, wireless technologies are being integrated into existing networks to support employee mobility needs. Since wireless access can expose devices to unique threats, monitoring devices for access to suspicious or malicious wireless networks is essential. This report provides extensive information about the wireless networks accessed by scanned hosts in the organization. Several specific plugins are used to gather extensive details about wireless interfaces and SSID connections from Windows and macOS hosts. Security teams can use this report to easily examine wireless configuration details for scanned hosts and tailor scanning policies in order to include additional hosts. The chapters in this report present both a high-level overview and an in-depth analysis of the wireless configurations detected on hosts in the network. Charts and tables demonstrate which plugins were able to successfully gather wireless configuration details from scanned hosts. An iterator is used to provide extensive detail about wireless configurations of each host, including network interfaces and SSID histories. Security teams can use this detailed report to identify and monitor the wireless connections and configurations of hosts in the organization.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 
-## Sources:
+## Sources
 
 - https://www.tenable.com/downloads/nessus
 - https://docs.tenable.com/nessus/Content/InstallNessusLinux.htm

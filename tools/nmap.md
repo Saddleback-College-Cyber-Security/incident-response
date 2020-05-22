@@ -1,6 +1,6 @@
 # Nmap
 
-[home](../README.md)
+[**Incident Response Home**](../README.md)
 - [Installing Nmap](#Installing-Nmap)
 	- [Linux](#Linux)
 	- [Windows](#Windows)
@@ -49,7 +49,6 @@ You will now be able to type your commands in a terminal window.
 >By default the root user is disabled on Mac OS X. To run a scan with root privileges prefix the command name with [sudo](./command_line_nix.md##General-Commands).
 
 ## Usage
-
 
 ```shell
 $ nmap [OPTIONS] <HOST> #Scan HOST (HOST can be a single ip, range, subnet, or individual hosts separated with spaces)

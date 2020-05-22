@@ -1,17 +1,34 @@
 # CEH Incident Response
 
 - [Welcome](#Welcome)
-	- [Documents](#Documents)
-- [For Students in CEH](#For-Students-in-CEH)
-	- [Grading](#Grading)
-	- [Getting Started](#Getting-Started)
-	- [Commit Formatting](#Commit-Formatting)
-	- [Adding New Files](#Adding-New-Files)
-	- [Final Remarks](#Final-Remarks)
+- General Vulnerabilities
+	- [Linux System Vulnerabilities](./general_vulnerabilities/linux_system_vulnerabilities.md)
+	- [Malware](./general_vulnerabilities/malware.md)
+	- [Phishing](./general_vulnerabilities/phishing.md)
+	- [Session Hijacking](./general_vulnerabilities/session_hijacking.md)
+	- [Viruses](./general_vulnerabilities/viruses.md)
+	- [Windows System Vulnerabilities](./general_vulnerabilities/windows_system_vulnerabilities.md)
+- Hardware
+	- [Network Switches](./hardware/network_switches.md)
+- Services
+	- [Central Authentication Service](./services/central_authentication_service.md)
+	- [Central Logging (Graylogs)](./services/graylogs/README.md)
+	- [File Transfer Protocol](./services/ftp.md)
+	- [Jenkins](./services/jenkins.md)
+	- [Network File Serviced](./services/network_file_service.md)
+	- [Network Topology](./services/network_topology.md)
+	- [Password Management](./services/password_management.md)
+	- [Web Application Firewall](./services/web_application_firewall.md)
+- Tools
+	- [Command Line *nix](./tools/command_line_nix.md)
+	- [Command Line Windows](./tools/command_line_win.md)
+	- [Nessus](./tools/nessus.md)
+	- [NetCat](./tools/netcat.md)
+	- [Nmap](./tools/nmap.md)
 
 ## Welcome
 
-Hello!  
+Hello!
 
 If you are reading this, it means you have found the CEH / Saddleback College Cyber Operations Club Incident Response Github.
 
@@ -23,40 +40,6 @@ Inside the directory `readme` you will find the following goodies to get you sta
 - A cheatsheet for markdown
 - A list of all CEH students and their respective section assignments (this list is mostly for grading; feel free to add to any section!)
 - A *very large* PDF with some introductory information on many of the topics in this 
-
-### Documents
-
-- Contributing
-	- [Markdown Syntax](./readme/markdown_syntax.md)
-	- [Open Sections](./readme/Open_Sections.pdf)
-	- [Student List](./readme/student_list.md)
-	- [Topics](./readme/topics.md)
-- FTP Install
-	- [Kali Linux](./ftp_install/kali_linux.md)
-- General Vulnerabilities
-	- [Linux System Vulnerabilities - Copy](./general_vulnerabilities/linux_system_vulnerabilities-Copy.md)
-	- [Session Hijacking](./general_vulnerabilities/session_hijacking.md)
-	- [Windows System Vulnerabilities](./general_vulnerabilities/windows_system_vulnerabilities.md)
-- Graylogs Settup
-	- [Graylogs Ubuntu Settup](./graylogs_settup/graylogs_ubuntu_settup.md)
-- Hardware
-	- [Network Switches](./hardware/network_switches.md)
-- Services
-	- [Central Authentication Service](./services/central_authentication_service.md)
-	- [Central Logging](./services/central_logging.md)
-	- [File Transfer Protocol](./services/file_transfer_protocol.md)
-	- [Jenkins](./services/jenkins.md)
-	- [Network File Serviced](./services/network_file_service.md)
-	- [Network Topology](./services/network_topology.md)
-	- [Password Management](./services/password_management.md)
-	- [Web Application Firewall](./services/web_application_firewall.md)
-- Tools
-	- [Command Line *nix](./tools/command_line_nix.md)
-	- [Nessus](./tools/nessus.md)
-	- [NetCat](./tools/netcat.md)
-	- [Nmap](./tools/nmap.md)
-- [README](#CEH-Incident-Response)
-
 
 ## For Students in CEH
 
@@ -80,7 +63,7 @@ For those looking to skip straight into using git, it can be downloaded and inst
 
 Graphical options for git are available, however most develepors opt to use the command line version instead. The tutorial mentioned previously uses command line tools.
 
-### Commit Formatting 
+### Commit Formatting
 
 For those already getting started, please try to adhear to the formatting standards found in the various files already populating this repository.
 
