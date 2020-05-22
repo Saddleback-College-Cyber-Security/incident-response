@@ -1,9 +1,9 @@
 # Linux System Vulnerabilities
 
-[home](../README.md)
-- [Example](#Example)
+[**Incident Response Home**](../README.md)
+- [Incident Overview](#Incident-Overview)
 
-## Incident Overview  
+## Incident Overview
 
 The average Linux system is often vulnerable to potential attacks. 
 

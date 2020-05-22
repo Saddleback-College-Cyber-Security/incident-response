@@ -1,6 +1,6 @@
 # Web Application Firewall
 
-[Home](../README.md)
+[**Incident Response Home**](../README.md)
 - [Overview of WAF](#overview-of-waf)
 - [Common Business Usecases](#common-business-usecases)
 - [Common Tasks Performed](#common-tasks-performed-eg-setup-configuration-etc)

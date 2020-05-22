@@ -1,7 +1,6 @@
 # FTP Install on Kali Linux
 
-[home](../README.md)
-- [Example](#Example)
+[**Incident Response Home**](../README.md)
 
 Log into Kali system
 

@@ -1,9 +1,9 @@
 # Jenkins
 
-[home](../README.md)
-- [Example](#Example)
+[**Incident Response Home**](../README.md)
+- [Incident Overview](#Incident-Overview)
 
-## Incident Overview  
+## Incident Overview
 
 Jenkins is a free and open source automation server.  
 It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery.     

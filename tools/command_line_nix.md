@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-[home](../README.md)
+[**Incident Response Home**](../README.md)
 - [Incident Overview](#Incident-Overview)
 - [I Need Help, Where Can I Go?](#I-Need-Help,-Where-Can-I-Go?)
 - [General Commands](#General-Commands)

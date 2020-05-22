@@ -1,6 +1,6 @@
 # Session Hijacking & Countermeasures
 
-[home](../README.md)
+[**Incident Response Home**](../README.md)
 - [Abstract](#Abstract)
 - [Introduction](#Introduction)
 - [Active Session Hijacking 1](#Active-Session-Hijacking-1)
