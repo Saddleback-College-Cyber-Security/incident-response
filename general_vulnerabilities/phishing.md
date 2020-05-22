@@ -20,11 +20,11 @@ Phishing is a type of Social Engineering, in which the person attacking uses sof
 Phishing has become a more difficult and elevating threat to the security of all users on the Internet. Phishers are hard to find because they’re to conceal their location on their servers and are able to work while remaining anonymous. A user with great security can still become a victim of a phishing attack.  A vast majority of the information that is found was typed onto a form, not based on a computer that was infected by malware. There are several different ways to help defend against phishing attacks. You can find an attack before it reaches a user. When a user reaches a phishing website, or a user can be trained to be aware of the attack. Over the years Phishing has become so advance and secret over the years that there are $500m in losses every year in business in the US. 
 There are several different types of clone phishing the these are some of them.
 
-## Clone Phishing 
+## Clone Phishing
 
 The first type is called clone Phishing, in which the attacker generates a email that is cloned. He does this by gathering information like data an addresses from the recipient and legitimate email was delivered before, he then sends the same email with malicious links attached. He also spoofs the address so that the email appears to be from an original sender. The attacker can use a strategy to trap by showing how the email can be a resend from the original or an updated version. 
 
-## Spear Phishing 
+## Spear Phishing
 
 The second type of phishing is called spear phishing, in spear phishing a particular group or person is targeted perhaps a CEO or member of upper management or security clearance. But instead of sending out thousands of emails at various times, spear phishing is designed to choose people with something in common with people from the same business. There is another form spear phishing called “Whaling” where A CEO’s is targeted.  IN 2008 many CEOs in the US were given fake subpoenas that also came with an attachment that would install malware each time it was read.
 
@@ -44,6 +44,6 @@ The attacker can create a fake website to look like a real one, so that victims 
 
 In an Evil Twin phishing, evil sets its crosshairs on Wi-Fi. The attacker creates a wireless access point to lure unsuspecting victims in so that the attacker can obtain criitcal information about a person  or business without the permission from the end-users.The attack using Evil twin will use the set service identifier that is the same as the  network. When a user connects to the network the attacker can listen in on their network traffic and take usernames,passwords, and look at all attachments on the users account while connected to the hotspot that compromised.
 
-## HTTPS Phishing 
+## HTTPS Phishing
 
 How is it works, an attacker uses this attack by sending an email from what looks like a legitmate website link from the email body. There’s often no other except for link itself which maybe clickable or a non-active link that makes the user to copy and paste the URL into the URL address bar.  

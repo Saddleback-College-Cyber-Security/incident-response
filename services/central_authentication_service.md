@@ -18,7 +18,7 @@
 			- [Security](#Security)
 		- [systemd Service](#systemd-Service)
 
-## Incident Overview  
+## Incident Overview
 
 The Central Authentication Service (CAS) is a single sign-on protocol for the web.  
 Its purpose is to permit a user to access multiple applications while providing their credentials (such as userid and password) only once.   
@@ -99,7 +99,7 @@ The term “CAS client” has two distinct meanings in its common use. A CAS cli
 
 When the term “CAS client” appears in this manual without further qualification, it refers to the integration components such as the Java CAS Client rather than to the application relying upon (a client of) the CAS server.
 
-### Suppported Protocols 
+### Suppported Protocols
 
 Clients communicate with the server by any of several supported protocols. All the supported protocols are conceptually similar, yet some have features or characteristics that make them desirable for particular applications or use cases. For example, the CAS protocol supports delegated (proxy) authentication, and the SAML protocol supports attribute release and single sign-out.
 

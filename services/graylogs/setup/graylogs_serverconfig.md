@@ -1,5 +1,7 @@
 # server.conf
 
+TODO: Clean up markdown formatting
+
 [**Graylogs Home**](../README.md)
 
 **Source:** http://docs.graylog.org/en/2.4/pages/installation/os/ubuntu.html
@@ -32,10 +34,10 @@ The property value is generally terminated by the end of the line. White space f
 
 *A property value can span several lines if each line is terminated by a backslash (\) character. For example:**
 
-    targetCities=\
-       Detroit,\
-       Chicago,\
-       Los Angeles
+	targetCities=\
+		Detroit,\
+		Chicago,\
+		Los Angeles
 
 This is equivalent to **targetCities=Detroit,Chicago,Los Angeles** (white space at the beginning of lines is ignored).
 
@@ -43,7 +45,7 @@ The characters newline, carriage return, and tab can be inserted with characters
 
 The backslash character must be escaped as a double backslash. For example:
 
-    path=c:\\docs\\doc1
+	path=c:\\docs\\doc1
 
 
 # Properties #
@@ -69,7 +71,7 @@ The backslash character must be escaped as a double backslash. For example:
 
 **Generate a secret with for example:**
 
-    pwgen -N 1 -s 96
+	pwgen -N 1 -s 96
 
 **root_username = admin**
 
@@ -83,7 +85,7 @@ The backslash character must be escaped as a double backslash. For example:
 **You MUST specify a hash password for the root user (which you only need to initially set up the system and in case you lose connectivity to your authentication backend). This password cannot be changed using the API or via the web interface. If you need to change it, modify it in this file.**
 
 
-       root_email = ""
+		root_email = ""
 
 * The email address of the root user. Default is empty.
 
@@ -96,7 +98,7 @@ The backslash character must be escaped as a double backslash. For example:
 * This directory contains binaries that are used by the Graylog server. (relative or absolute)
 
 	data_dir = data
-      
+
 * This directory is used to store Graylog server state. (relative or absolute)
 
 	plugin_dir = plugin
@@ -105,7 +107,7 @@ The backslash character must be escaped as a double backslash. For example:
 
 ## Web & REST API ##
 
-    http_bind_address = 127.0.0.1:9000
+	http_bind_address = 127.0.0.1:9000
 
 * The network interface used by the Graylog HTTP interface.
 
@@ -129,7 +131,7 @@ The backslash character must be escaped as a double backslash. For example:
 
 contains a wildcard IPv4 address (0.0.0.0), http_publish_uri will be filled with the first non-loopback IPv4 address of this machine instead.
 
-    http_external_uri = $http_publish_uri
+	http_external_uri = $http_publish_uri
 
 * The public URI of Graylog which will be used by the Graylog web interface to communicate with the Graylog REST API.
 
@@ -181,7 +183,7 @@ contains a wildcard IPv4 address (0.0.0.0), http_publish_uri will be filled with
 
 ##Elasticsearch##
 
-    elasticsearch_hosts = http://node1:9200,http://user:password@node2:19200
+	elasticsearch_hosts = http://node1:9200,http://user:password@node2:19200
 
 * List of Elasticsearch hosts Graylog should connect to.
 
@@ -209,7 +211,7 @@ contains a wildcard IPv4 address (0.0.0.0), http_publish_uri will be filled with
 
 * Default: infinity
 
-       elasticsearch_max_total_connections = 200
+		elasticsearch_max_total_connections = 200
 
 * Maximum number of total connections to Elasticsearch.
 

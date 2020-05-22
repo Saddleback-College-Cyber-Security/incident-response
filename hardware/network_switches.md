@@ -1,7 +1,6 @@
 # Network Switches
 
-[home](../README.md)
-- [Example](#Example)
+[**Incident Response Home**](../README.md)
 
 ### Here you will find some general, and useful information about network switches.
 

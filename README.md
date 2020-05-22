@@ -74,7 +74,7 @@ For those looking to skip straight into using git, it can be downloaded and inst
 
 Graphical options for git are available, however most develepors opt to use the command line version instead. The tutorial mentioned previously uses command line tools.
 
-### Commit Formatting 
+### Commit Formatting
 
 For those already getting started, please try to adhear to the formatting standards found in the various files already populating this repository.
 
