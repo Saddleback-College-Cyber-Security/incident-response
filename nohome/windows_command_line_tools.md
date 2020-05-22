@@ -1,3 +1,5 @@
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA. -->
+
 # Windows Command Line Tools
 
 Windows command line tools are a comparably simple vector for cybersecurity attacks in an era of advanced cryptography, sophisticated cracking tools, DNS tunneling, and dozens more, and yet they are no less dangerous. It is not hard to see why: Windows Powershell, a ubiquitous program and command terminal that comes factory default with any Windows OS today, is often utilized for running high-level administrative tasks in an automated fashion through the use of scripts. Were an attacker to gain access to that terminal, then, they would have most of the resources on the network at their disposal.
