@@ -26,7 +26,7 @@ Generally speaking, the name of commits don't have a set structure. Just explain
 
 ## Issues and, Pull Requests
 
-To contribute, unless you are a part of the Saddleback-College-Cyber-Security organization, you will have to fork this repository to make changes. Afterward, just create a pull request and wait for a response. There are some [templates](https://github.com/Saddleback-College-Cyber-Security/incident-response/issues/new/choose) that have been created for this. Please use and follow them.
+To contribute, unless you are a part of the Saddleback-College-Cyber-Security organization, you will have to fork this repository to make changes. Afterward, just create a pull request and wait for a response. There are some [templates](./.github/TEMPLATES) that have been created for this. Please use and follow them.
 
 ---
 
