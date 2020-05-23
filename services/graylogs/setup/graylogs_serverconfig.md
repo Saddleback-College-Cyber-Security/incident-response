@@ -2,7 +2,7 @@
 
 # server.conf
 
-TODO: Clean up markdown formatting
+<!-- TODO: Clean up markdown formatting -->
 
 [**Graylogs Home**](../README.md)
 
